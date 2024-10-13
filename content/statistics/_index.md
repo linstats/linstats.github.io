@@ -13,7 +13,7 @@ sections:
   - block: collection
     id: statistics
     content:
-      title: My academic journey in statistics
+      title: My Statistics Journey
       filters:
         folders:
           - statistics
