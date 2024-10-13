@@ -12,7 +12,7 @@ image:
 
 Throughout my badminton journey, playing against close friends has been one of the most rewarding experiences. Each match allowed me to sharpen my technical skills and refine my strategies, learning from both victories and defeats. Below are a few key moments captured during friendly matches that reflect how my game has evolved.
 
-### Matches with Li Linhao
+### Matches with Li Linhao (李林昊)
 In these videos, I’m facing off against Li Linhao, a challenging opponent who has pushed me to improve my speed and precision.
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
@@ -26,7 +26,7 @@ In these videos, I’m facing off against Li Linhao, a challenging opponent who 
   </video>
 </div>
 
-### Matches with Wu Haihan
+### Matches with Wu Haihan (吴海涵)
 Here are two matches where I went up against Wu Haihan. These games highlight how I’ve enhanced my defensive techniques and adaptability during play.
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
@@ -40,7 +40,7 @@ Here are two matches where I went up against Wu Haihan. These games highlight ho
   </video>
 </div>
 
-### Matches with Liu Chengyu
+### Matches with Liu Chengyu (刘澄昱)
 Finally, these videos capture me going up against Liu Chengyu, my regular doubles partner. Playing against him in singles required a deeper focus on agility and tactical positioning.
 
 <div style="display: flex; justify-content: space-between;">
