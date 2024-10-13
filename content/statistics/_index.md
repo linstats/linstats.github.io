@@ -1,6 +1,6 @@
 ---
 title: Statistics
-summary: My academic journey in statistics
+summary: My Statistics Journey
 type: landing
 
 cascade:
