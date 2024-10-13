@@ -1,6 +1,6 @@
 ---
 title: "Starting From Parking Lot"
-summary: A reflection on how my passion for badminton began and evolved through high school and university.
+summary: How my passion for badminton began in high school.
 date: 2018-06-12
 type: docs
 math: false

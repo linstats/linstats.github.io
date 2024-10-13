@@ -1,6 +1,6 @@
 ---
 title: "Training at SUSTech"
-summary: A reflection on how my passion for badminton evolved in university.
+summary: How my passion for badminton evolved in university.
 date: 2019-09-12
 type: docs
 math: false
@@ -14,7 +14,7 @@ In 2019, I was fortunate to join the badminton team at the Southern University o
 
 | ![Friend1](images/bmt1-2.jpg) | ![Friend2](images/bmt1-1.jpg) |
 |:-----------------------------:|:----------------------------:|
-| {{< video src="images/bmt1-v1.mp4" controls="yes" >}} | {{< video src="images/bmt1-v2.mp4" controls="yes" >}} |
+| My Campus Teammates           | My Partner and Advisor        |
     
 
 During my time on the team, I had the privilege of training under three exceptional coaches:
@@ -28,4 +28,7 @@ Their expertise significantly enhanced my technical skills and strategic underst
 
 | ![Drop Shot](images/bmt1-3.jpg) | ![Doubles Play](images/bmt1-4.jpg) | ![Smash](images/bmt1-5.jpg) |
 |:------------------------------:|:----------------------------------:|:----------------------------:|
-| Drop Shot                      | Doubles Play                       | Smash                        |
+| Lift                      | Defense                       | Smash                        |
+
+Before joining the SUSTech badminton team, I played in a more casual style. You can watch how I played then in the videos below. In the next post, I’ll share how my gameplay evolved after joining the team.
+| {{< video src="images/bmt1-v1.mp4" controls="yes" >}} | {{< video src="images/bmt1-v2.mp4" controls="yes" >}} |
