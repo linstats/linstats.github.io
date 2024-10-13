@@ -8,7 +8,7 @@ design:
   spacing: '5rem'
 
 sections:
-  - block: content
+  - block: collection
     content:
       title: My Badminton Journey
       text: |
@@ -26,6 +26,12 @@ sections:
           <img src="/images/badminton-2.jpg" alt="Doubles Play" style="width: 49.5%;">
           <img src="/images/badminton-3.jpg" alt="Smash" style="width: 18%;">
         </div>
+      
+      filters:
+        folders:
+          - project
     design:
-      view: single-column
+      view: article-grid
+      fill_image: false
+      columns: 3
 ---
