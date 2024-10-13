@@ -13,12 +13,12 @@ sections:
       title: My Badminton Journey
       text: "A reflection on my experiences playing and training in badminton."
 
-  - block: content  # Replace 'text' with a generic 'content' block
+  - block: markdown  # Replace 'content' with 'markdown'
     content:
       title: My Training and Partners
       body: |
         Alongside my academic and professional pursuits, badminton has been one of my greatest passions...
-      
+   
   - block: media
     content:
       title: "Gallery"
