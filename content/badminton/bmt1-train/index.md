@@ -13,9 +13,9 @@ image:
 In 2019, I was fortunate to join the badminton team at the Southern University of Science and Technology, where I made a bunch of close friends there and focused on men's doubles, partnering with [Liu Chengyu](http://www.jiangxingyusustech.com/page131?article_id=64) (刘澄昱) and advised by both a advisor and a friend, Zhao Fei (赵飞).
 
 | ![Friend1](images/bmt1-2.jpg) | ![Friend2](images/bmt1-1.jpg) |
-    {{< video src="images/bmt1-v1.mp4" controls="yes" >}}
-    {{< video src="images/bmt1-v2.mp4" controls="yes" >}}
-
+|:-----------------------------:|:----------------------------:|
+| {{< video src="images/bmt1-v1.mp4" controls="yes" >}} | {{< video src="images/bmt1-v2.mp4" controls="yes" >}} |
+    
 
 During my time on the team, I had the privilege of training under three exceptional coaches:
 
@@ -27,3 +27,5 @@ During my time on the team, I had the privilege of training under three exceptio
 Their expertise significantly enhanced my technical skills and strategic understanding of men's doubles badminton. Equally important were the bonds I formed with my friends, particularly the strong partnership I built with Liu Chengyu.
 
 | ![Drop Shot](images/bmt1-3.jpg) | ![Doubles Play](images/bmt1-4.jpg) | ![Smash](images/bmt1-5.jpg) |
+|:------------------------------:|:----------------------------------:|:----------------------------:|
+| Drop Shot                      | Doubles Play                       | Smash                        |
