@@ -21,8 +21,3 @@ For a brief presentation on the topic, you can watch the video (in Chinese) belo
   <iframe src="//player.bilibili.com/player.html?bvid=BV1gUx7esEr1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="450"> </iframe>
 </div>
 
-
-**Bilibili**:
-
-    {{< bilibili id="BV1gUx7esEr1" >}}
-
