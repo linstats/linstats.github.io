@@ -36,3 +36,5 @@ The men's doubles final was equally tough. My partner, Song Shuhao (宋舒昊), 
 We did a good defense and comfort each other as partners. Finally we won the game.
 {{< video src="images/bmt3-7.mp4" controls="yes" >}}
 
+### Friendship
+This tournament marked a pivotal moment in my badminton journey. Winning both the singles and doubles titles was not just a personal milestone, but a reflection of the dedication, teamwork, and support from my teammates. Despite the intense competition, the respect and friendship I shared with my opponents also remained strong. Battling against friends and players I deeply admire made each victory all the more meaningful.
