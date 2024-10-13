@@ -1,5 +1,5 @@
 ---
-title: My Journey in Statistics
+title: Statistics
 summary: My academic journey in statistics
 type: landing
 
@@ -13,7 +13,7 @@ sections:
   - block: collection
     id: statistics
     content:
-      title: Statistics
+      title: My academic journey in statistics
       filters:
         folders:
           - statistics
