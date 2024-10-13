@@ -1,5 +1,5 @@
 ---
-title: My Badminton Journey: From Parking Lot to University Court
+title: "My Badminton Journey: From Parking Lot to University Court"
 summary: A reflection on how my passion for badminton began and evolved through high school and university.
 date: 2018-06-12
 type: docs
