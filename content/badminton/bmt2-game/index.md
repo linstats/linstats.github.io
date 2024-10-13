@@ -17,11 +17,11 @@ In these videos, I’m facing off against Li Linhao, a challenging opponent who 
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
   <video controls style="width: 48%;">
-    <source src="images/bmt1-v5.mp4" type="video/mp4">
+    <source src="images/bmt2-v5.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <video controls style="width: 48%;">
-    <source src="images/bmt1-v6.mp4" type="video/mp4">
+    <source src="images/bmt2-v6.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -31,11 +31,11 @@ Here are two matches where I went up against Wu Haihan. These games highlight ho
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
   <video controls style="width: 48%;">
-    <source src="images/bmt1-v3.mp4" type="video/mp4">
+    <source src="images/bmt2-v3.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <video controls style="width: 48%;">
-    <source src="images/bmt1-v4.mp4" type="video/mp4">
+    <source src="images/bmt2-v4.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
