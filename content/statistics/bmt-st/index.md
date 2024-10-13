@@ -5,8 +5,7 @@ date: 2024-01-25
 type: docs
 math: false
 tags:
-  - Badminton
-  - Statistics
+  - Shenzhen, P.R. China
 image:
   caption: 'Returning a Service'
 ---

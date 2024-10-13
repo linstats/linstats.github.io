@@ -5,7 +5,7 @@ date: 2024-05-03
 type: docs
 math: false
 tags:
-  - Master Graduation
+  - Ann Arbor, MI, United States
 image:
   caption: 'Speaking at UM'
 ---
