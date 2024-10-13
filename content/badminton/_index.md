@@ -12,12 +12,12 @@ sections:
     content:
       title: My Badminton Journey
       text: |
-        Alongside my academic and professional pursuits, badminton has been one of my greatest passions. I began playing at the age of 17 and was fortunate to join the badminton team at the Southern University of Science and Technology. I focused on men's doubles, partnering with [Liu Chengyu](http://www.jiangxingyusustech.com/page131?article_id=64) (刘澄昱).
+        Alongside my academic and professional pursuits, badminton has been one of my greatest passions. I began playing at the age of 17 and was fortunate to join the badminton team at the Southern University of Science and Technology. I focused on men's doubles, partnering with <a href="http://www.jiangxingyusustech.com/page131?article_id=64">Liu Chengyu</a> (刘澄昱).
 
         During my time on the team, I had the privilege of training under two exceptional coaches:
 
-        - [Sun Yu](https://bwfbadminton.com/player/92736/sun-yu) (孙瑜), a former world champion and professional badminton player,
-        - [Zeng Yumin](http://sport.sustech.edu.cn/show-29-4-1.html) (曾煜民), a coach from the Guangdong Provincial Badminton Team.
+        - <a href="https://bwfbadminton.com/player/92736/sun-yu">Sun Yu</a> (孙瑜), a former world champion and professional badminton player,
+        - <a href="http://sport.sustech.edu.cn/show-29-4-1.html">Zeng Yumin</a> (曾煜民), a coach from the Guangdong Provincial Badminton Team.
 
         Their expertise significantly enhanced my technical skills and strategic understanding of men's doubles badminton. Equally important were the bonds I formed with my teammates, particularly the strong partnership I built with Liu Chengyu.
 
