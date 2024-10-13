@@ -8,7 +8,7 @@ design:
   spacing: '5rem'
 
 sections:
-  - block: collection
+  - block: content
     content:
       title: My Badminton Journey
       text: |
