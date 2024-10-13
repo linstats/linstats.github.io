@@ -1,13 +1,13 @@
 ---
 title: "Starting From Parking Lot"
 summary: A reflection on how my passion for badminton began and evolved through high school and university.
-date: 2018-06-12
+date: 2019-09-12
 type: docs
 math: false
 tags:
-  - Chongqing, P.R. China
+  - Shenzhen, P.R. China
 image:
-  caption: 'Yucai Middle School'
+  caption: 'Runyang Stadium'
 ---
 
 In 2019, I was fortunate to join the badminton team at the Southern University of Science and Technology. I focused on men's doubles, partnering with [Liu Chengyu](http://www.jiangxingyusustech.com/page131?article_id=64) (刘澄昱).
