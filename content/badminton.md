@@ -11,7 +11,7 @@ sections:
   - block: collection
     content:
       title: My Badminton Journey
-      text: Alongside my academic and professional pursuits, badminton has been one of my greatest passions. I began playing at the age of 17, and this page is a miniature of my badminton journey.
+      text: Badminton has been a passion of mine since I started playing at 17, and this page captures highlights of my journey.
       filters:
         folders:
           - badminton
