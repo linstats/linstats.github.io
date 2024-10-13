@@ -1,5 +1,5 @@
 ---
-title: Statistics
+title: My Journey in Statistics
 summary: My academic journey in statistics
 type: landing
 
