@@ -30,5 +30,3 @@ Their expertise significantly enhanced my technical skills and strategic underst
 |:------------------------------:|:----------------------------------:|:----------------------------:|
 | Lift                      | Defense                       | Smash                        |
 
-<!-- Before joining the SUSTech badminton team, I played in a more casual style. You can watch how I played then in the videos below. In the next post, I’ll share how my gameplay evolved after joining the team.
-| {{< video src="images/bmt1-v1.mp4" controls="yes" >}} | {{< video src="images/bmt1-v2.mp4" controls="yes" >}} | -->
