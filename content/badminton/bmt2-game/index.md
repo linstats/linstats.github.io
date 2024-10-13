@@ -1,7 +1,7 @@
 ---
 title: "Going Up against Friends"
 summary: How my skills and technical strategy evolved
-date: 2021-12-12
+date: 2021-10-25
 type: docs
 math: false
 tags:
