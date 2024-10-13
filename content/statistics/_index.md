@@ -1,6 +1,6 @@
 ---
-title: Teaching
-summary: My courses
+title: Statistics
+summary: My academic journey in statistics
 type: landing
 
 cascade:
@@ -11,12 +11,12 @@ cascade:
 
 sections:
   - block: collection
-    id: teaching
+    id: statistics
     content:
-      title: Teaching
+      title: Statistics
       filters:
         folders:
-          - teaching
+          - statistics
     design:
       view: article-grid
       columns: 2
