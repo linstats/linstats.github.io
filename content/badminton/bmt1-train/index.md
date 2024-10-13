@@ -1,6 +1,6 @@
 ---
-title: "Starting From Parking Lot"
-summary: A reflection on how my passion for badminton began and evolved through high school and university.
+title: "Training in SUSTech Campus Team"
+summary: A reflection on how my passion for badminton evolved in university.
 date: 2019-09-12
 type: docs
 math: false
