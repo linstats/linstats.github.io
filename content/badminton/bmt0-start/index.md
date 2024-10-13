@@ -16,9 +16,4 @@ My badminton journey began during my senior year in the badminton club at [Yucai
 
 The next phase of my journey started at the [Southern University of Science and Technology](http://sustech.edu.cn/en/), where I received proper training. It was also here that I had the opportunity to attend live matches, which deepened my love for the sport.
 
-<div style="display: flex; justify-content: space-around;">
-  <img src="images/bmt0-2.JPG" alt="Training at SUSTech" width="45%">
-  <img src="images/bmt0-1.JPG" alt="Live Matches" width="45%">
-</div>
-
-From casual play in a parking lot to structured training at university, my journey in badminton has evolved significantly. It’s a sport that continues to challenge and excite me, and I look forward to what’s next on this path.
+![Live Matches](images/bmt0-1.JPG)
