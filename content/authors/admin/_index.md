@@ -130,15 +130,15 @@ skills:
       - name: Badminton
         description: ''
         percent: 95
-        # icon: custom/badminton
+        icon: custom/badminton
       - name: Cooking
         description: ''
         percent: 75
-        # icon: custom/cooking
+        icon: custom/cooking
       - name: Bilibili
         description: ''
         percent: 100
-        # icon: custom/bilibili
+        icon: custom/bilibili
 
 languages:
   - name: English
