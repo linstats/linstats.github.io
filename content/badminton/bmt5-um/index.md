@@ -26,7 +26,7 @@ Here is a video of my match with Li Linhao from my time at SUSTech, where I used
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
   <video controls style="width: 100%;">
-    <source src="../../bmt2-game/images/bmt2-v3.mp4" type="video/mp4">
+    <source src="../bmt2-game/images/bmt2-v3.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
