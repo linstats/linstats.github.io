@@ -20,7 +20,7 @@ However, without the systematic training I was used to, I noticed a decline in m
 
 <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; width: 100%;">
   <video controls style="width: 100%;">
-    <source src="../bmt2-game/images/bmt2-v5.mp4" type="video/mp4">
+    <source src="../bmt3-game/images/bmt2-v5.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <p style="text-align: center; width: 100%;">Hard Style - Match with Li Linhao (偏硬的球风)</p>
