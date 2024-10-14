@@ -1,5 +1,5 @@
 ---
-title: "Bringing Statistics to Life: My Teaching Philosophy"
+title: "My Philosophy: Bringing Stats to Life"
 summary: How I understand statistics and make it accessible through practical applications and visualizations.
 date: 2024-10-10
 type: docs
@@ -7,7 +7,7 @@ math: false
 tags:
   - Singapore
 image:
-  caption: 'Statistics'
+  caption: 'Con Panna with Notes'
 ---
 
 
