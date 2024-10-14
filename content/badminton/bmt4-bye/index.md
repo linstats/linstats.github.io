@@ -14,7 +14,7 @@ In the summer of 2022, I graduated from SUSTech, where I got trained and made la
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
   <div style="flex-basis: 48%; margin-bottom: 20px;">
-    <img src="images/bmt4-1.jpg" alt="Memory 1" style="width: 100%;">
+    <img src="imagebs/bmt4-1.jpg" alt="Memory 1" style="width: 100%;">
   </div>
   <div style="flex-basis: 48%; margin-bottom: 20px;">
     <img src="images/bmt4-2.jpg" alt="Memory 2" style="width: 100%;">
