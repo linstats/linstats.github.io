@@ -122,7 +122,7 @@ skills:
       - name: R
         description: ''
         percent: 90
-        icon: chart-bar
+        icon: custom/r
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
