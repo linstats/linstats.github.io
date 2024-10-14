@@ -53,7 +53,7 @@ interests:
 
 education:
   - area: PhD in Statistics (in Progress)
-    institution: National University of Singapore
+    institution: <a href="https://nus.edu.sg/">National University of Singapore</a>
     date_start: 2024-07-29
     date_end: 
     summary: |
@@ -63,7 +63,7 @@ education:
 #      text: 'Read Thesis'
 #      url: 'https://example.com'
   - area: MSc in Applied Statistics
-    institution: University of Michigan, Ann Arbor
+    institution: <a href="https://umich.edu/">University of Michigan, Ann Arbor</a>
     date_start: 2022-08-29
     date_end: 2024-05-02
     summary: |
@@ -73,7 +73,7 @@ education:
 #      text: 'Read Thesis'
 #      url: 'https://example.com'
   - area: BSc in Statistics
-    institution: Southern University of Science and Technology
+    institution: <a href="http://sustech.edu.cn/en/">Southern University of Science and Technology</a>
     date_start: 2018-08-15
     date_end: 2022-07-02
     summary: |
