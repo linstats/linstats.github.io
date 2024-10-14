@@ -9,10 +9,10 @@ main:
     weight: 10
   - name: Statistics
     url: statistics/
-    weight: 30
+    weight: 20
   - name: Badminton
     url: badminton/
-    weight: 35
+    weight: 30
   - name: Teaching
     url: teaching/
     weight: 40
