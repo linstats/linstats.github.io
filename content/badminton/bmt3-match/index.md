@@ -13,7 +13,7 @@ image:
 The most exciting moment of my badminton journey would be the 1st Badminton Tournament of the Faculty of Science at SUSTech in 2021, where I participated as both men's single and men's doubles player.
 
 ### Men's Single Game
-The toughest moment of the tournament came unexpectedly early, during the quarterfinals. I found myself up against my senior teammate, Tang Wenyue (唐文跃), a skilled player on our campus team. Nerves got the best of me in the beginning, leading to several unforced errors and a significant 2:11 deficit. However, I managed to regain my composure and adjust my strategy. As I settled into the game, I fought back and eventually won the match 23:21.
+The toughest moment of the tournament came unexpectedly early, during the quarterfinals. I found myself up against my senior teammate, Tang Wenyue (唐文越), a skilled player on our campus team. Nerves got the best of me in the beginning, leading to several unforced errors and a significant 2:11 deficit. However, I managed to regain my composure and adjust my strategy. As I settled into the game, I fought back and eventually won the match 23:21.
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
   <video controls style="width: 48%;">
