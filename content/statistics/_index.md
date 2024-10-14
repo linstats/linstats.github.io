@@ -13,7 +13,7 @@ sections:
   - block: collection
     id: statistics
     content:
-      title: My Statistics Journey
+      title: My Stats Journey
       filters:
         folders:
           - statistics
