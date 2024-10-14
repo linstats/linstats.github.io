@@ -1,7 +1,7 @@
 ---
 title: "Bringing Statistics to Life: My Teaching Philosophy"
 summary: How I make complex statistical concepts accessible through practical applications and visualizations.
-date: 2023-10-24
+date: 2024-10-10
 type: docs
 math: false
 tags:
@@ -22,3 +22,5 @@ Similarly, we can visualize the idea of **support vector machines (SVM)**, anoth
 <p align="center">
   <img src="images/tch-phi-2.jpg" alt="TeachingSVM" width="width: 99%;">
 </p>
+
+In my philosophy of teaching and using statistics, the key is to **simplify** without losing the depth of the subject, by making concepts more **accessible** through visualization and emphasizing the practical impact of statistics.
