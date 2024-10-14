@@ -1,13 +1,13 @@
 ---
 title: "Starting From Parking Lot"
 summary: How my passion for badminton began in high school.
-date: 2017-09-30
+date: 2018-06-12
 type: docs
 math: false
 tags:
   - Chongqing, P.R. China
 image:
-  caption: 'Chongqing Yucai Middle School'
+  caption: 'Yucai Middle School'
 ---
 
 My badminton journey began during my senior year in the badminton club at [Yucai Middle School](https://www.cqyc.com/). At that time, our court was no more than a simple parking lot with a net strung across. Although the setup was basic, I had a lot of fun, and it was during these casual games that I first discovered my passion for badminton.
