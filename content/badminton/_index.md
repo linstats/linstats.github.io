@@ -20,5 +20,6 @@ sections:
     design:
       view: article-grid
       columns: 3
-      pagination: false  # Disable pagination for this section
+      pagination:
+        pagerSize: 20
 ---
