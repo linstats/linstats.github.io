@@ -19,6 +19,6 @@ sections:
           - badminton
     design:
       view: article-grid
-      columns: 2
+      columns: 3
       show_all_entries: true  # Set to true to show all posts
 ---
