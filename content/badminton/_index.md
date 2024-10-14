@@ -19,7 +19,7 @@ sections:
           - badminton
     design:
       view: article-grid
-      columns: 4
+      columns: 3
       show_all_entries: true   # New line to show all posts without the "See All" button
       pagination: false        # Disable pagination (if relevant)
 ---
