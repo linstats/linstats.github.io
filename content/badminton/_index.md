@@ -14,10 +14,7 @@ sections:
     id: badminton
     content:
       title: My Badmin Journey
-      # Page type to display. E.g. post, talk, publication...
-      # page_type: badminton
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 0
+      count: 0 # Choose how many pages you would like to display (0 = all pages)
       filters:
         folders:
           - badminton
