@@ -20,5 +20,5 @@ sections:
     design:
       view: article-grid
       columns: 3
-      paginate: 20  # Correct usage: this will display 20 items per page
+      show_all_entries: true  # Set to true to show all posts
 ---
