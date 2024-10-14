@@ -13,13 +13,14 @@ sections:
   - block: collection
     id: badminton
     content:
-      title: My Badmin Journey
+      title: My Badminton Journey
       filters:
         folders:
           - badminton
     design:
       view: article-grid
       columns: 3
-      show_all_entries: true   # New line to show all posts without the "See All" button
-      pagination: false        # Disable pagination (if relevant)
+      paginate: 10  # Set this to the desired number of posts per page
+      show_all_entries: true   # Option to show all posts without a "See All" button
+      pagination: false        # Disable pagination if you want to show all posts
 ---
