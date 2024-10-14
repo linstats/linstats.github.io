@@ -20,6 +20,5 @@ sections:
     design:
       view: article-grid
       columns: 3
-      pagination:
-        pagerSize: 20
+      paginate: 20  # Correct usage: this will display 20 items per page
 ---
