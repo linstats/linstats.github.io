@@ -118,7 +118,7 @@ skills:
       - name: Latex
         description: ''
         percent: 90
-        icon: code-bracket
+        icon: custom/latex
       - name: R
         description: ''
         percent: 90
@@ -159,16 +159,16 @@ awards:
     certificate_url: https://lsa.umich.edu/content/dam/stats-assets/StatsPDF/2024-masters-program.pdf
     date: '2024-05-02'
     awarder: University of Michigan, Ann Arbor
-    icon: custom/python
+    icon: custom/python-c
   - title: Outstanding 1st Year Applied Statistics Master's Student
     certificate_url: https://lsa.umich.edu/stats/news-events/departmental-awards.html
     date: '2023-09-01'
     awarder: University of Michigan, Ann Arbor
-    icon: custom/python1
+    icon: custom/python
   - title: 'Outstanding Undergraduate Dissertation'
     date: '2022-05-30'
     awarder: Southern University of Science and Technology
-    icon: custom/bilibili
+    icon: custom/latex
 ---
 
 ## About Me
