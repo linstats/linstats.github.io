@@ -164,11 +164,11 @@ awards:
     certificate_url: https://lsa.umich.edu/stats/news-events/departmental-awards.html
     date: '2023-09-01'
     awarder: University of Michigan, Ann Arbor
-    icon: custom/org-um
+    icon: custom/python1
   - title: 'Outstanding Undergraduate Dissertation'
     date: '2022-05-30'
     awarder: Southern University of Science and Technology
-    icon: custom/r
+    icon: custom/bilibili
 ---
 
 ## About Me
