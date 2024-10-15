@@ -159,7 +159,7 @@ awards:
     certificate_url: https://lsa.umich.edu/content/dam/stats-assets/StatsPDF/2024-masters-program.pdf
     date: '2024-05-02'
     awarder: University of Michigan, Ann Arbor
-    icon: custom/org-um
+    icon: custom/python
   - title: Outstanding 1st Year Applied Statistics Master's Student
     certificate_url: https://lsa.umich.edu/stats/news-events/departmental-awards.html
     date: '2023-09-01'
@@ -168,7 +168,7 @@ awards:
   - title: 'Outstanding Undergraduate Dissertation'
     date: '2022-05-30'
     awarder: Southern University of Science and Technology
-    icon: custom/org-sustech
+    icon: custom/r
 ---
 
 ## About Me
