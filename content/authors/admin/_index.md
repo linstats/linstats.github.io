@@ -143,7 +143,9 @@ skills:
 languages:
   - name: English
     percent: 75
-  - name: Chinese
+  - name: Mandarin
+    percent: 100
+  - name: Chongqing Dialect
     percent: 100
   - name: Cantonese 
     percent: 1
