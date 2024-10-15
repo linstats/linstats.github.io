@@ -114,7 +114,7 @@ skills:
       - name: Python
         description: ''
         percent: 80
-        icon: custom/python
+        icon: custom/python-c
       - name: Latex
         description: ''
         percent: 90
