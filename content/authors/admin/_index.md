@@ -57,7 +57,7 @@ education:
     date_start: 2024-07-29
     date_end: 
     summary: |
-      under the supervision of Professor <a href="https://blog.nus.edu.sg/jialiang/">Li Jialiang</a>.
+      Advised by Professor <a href="https://blog.nus.edu.sg/jialiang/">Li Jialiang</a>
 #      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
 #    button:
 #      text: 'Read Thesis'
@@ -67,7 +67,7 @@ education:
     date_start: 2022-08-29
     date_end: 2024-05-02
     summary: |
-      under the supervision of Professor <a href="https://lsa.umich.edu/stats/people/faculty/thsing.html">Tailen Hsing</a>
+      Advised by Professor <a href="https://lsa.umich.edu/stats/people/faculty/thsing.html">Tailen Hsing</a>
 #      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
 #    button:
 #      text: 'Read Thesis'
@@ -77,7 +77,8 @@ education:
     date_start: 2018-08-15
     date_end: 2022-07-02
     summary: |
-      under the supervision of Lecturer <a href="https://www.sustech.edu.cn/en/faculties/xucong.html">Xu Cong</a> with a thesis on _Where to serve and return in Badminton Men's Double?_
+       Advised by Lecturer <a href="https://www.sustech.edu.cn/en/faculties/xucong.html">Xu Cong</a>
+       Thesis on _Where to serve and return in Badminton Men's Double?_. Supervised by [Lecturer Xu Cong](https://www.sustech.edu.cn/en/faculties/xucong.html).
     button:
       text: 'Read Thesis'
       url: 'https://arxiv.org/abs/2310.18572'
