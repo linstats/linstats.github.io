@@ -77,8 +77,7 @@ education:
     date_start: 2018-08-15
     date_end: 2022-07-02
     summary: |
-       Advised by Lecturer <a href="https://www.sustech.edu.cn/en/faculties/xucong.html">Xu Cong</a>
-       Thesis on _Where to serve and return in Badminton Men's Double?_. Supervised by [Lecturer Xu Cong](https://www.sustech.edu.cn/en/faculties/xucong.html).
+       Advised by Lecturer <a href="https://www.sustech.edu.cn/en/faculties/xucong.html">Xu Cong</a> with a thesis on _Where to serve and return in Badminton Men's Double?_.
     button:
       text: 'Read Thesis'
       url: 'https://arxiv.org/abs/2310.18572'
