@@ -78,10 +78,10 @@ education:
     date_end: 2022-07-02
     summary: |
       Advised by Lecturer <a href="https://www.sustech.edu.cn/en/faculties/xucong.html">Xu Cong</a>
-#      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-#    button:
-#      text: 'Read Thesis'
-#      url: 'https://example.com'
+      Thesis on _Where to serve and return in Badminton Men's Double?_. Supervised by [Lecturer Xu Cong](https://www.sustech.edu.cn/en/faculties/xucong.html).
+    button:
+      text: 'Read Thesis'
+      url: 'https://arxiv.org/abs/2310.18572'
 # work:
 #   - position: Director of Cloud Infrastructure
 #     company_name: GenCoin
