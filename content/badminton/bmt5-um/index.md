@@ -19,7 +19,7 @@ However, without the systematic training I was used to, I noticed a decline in m
     <source src="../bmt3-match/images/bmt3-5.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <p style="text-align: center; width: 100%;">Aggresive and Hard-Hitting Style</p>
+  <p style="text-align: center; width: 100%;">Aggresive and Hard-Hitting Style (偏硬的球风)</p>
 </div>
 
 As a result, I made a conscious decision to adapt my game. I transitioned to a softer, more controlled style (偏软的球风), focusing on consistency in my strokes (击球动作一致性) and mastering control over the mid-to-back court (中后半场控制). This adjustment allowed me to continue enjoying the game while accommodating the changes in my physical endurance.
@@ -29,7 +29,7 @@ As a result, I made a conscious decision to adapt my game. I transitioned to a s
     <source src="images/bmt5-v2.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <p style="text-align: center; width: 100%;">Controlled and Soft-Hitting Style</p>
+  <p style="text-align: center; width: 100%;">Controlled and Soft-Hitting Style (偏软的球风)</p>
 </div>
 
 <!-- <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">

@@ -80,7 +80,7 @@ education:
        Advised by Lecturer <a href="https://www.sustech.edu.cn/en/faculties/xucong.html">Xu Cong</a> with Thesis on _Where to serve and return in Badminton Men's Double?_.
     button:
       text: 'Read Thesis'
-      url: 'https://arxiv.org/abs/2310.18572'
+      url: 'https://linstats.github.io/statistics/bmt-st/'
 # work:
 #   - position: Director of Cloud Infrastructure
 #     company_name: GenCoin
