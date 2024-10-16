@@ -144,9 +144,9 @@ languages:
   - name: English
     percent: 75
   - name: Mandarin
-    percent: 100
+    percent: 95
   - name: Chongqing Dialect
-    percent: 100
+    percent: 95
   - name: Cantonese 
     percent: 1
 
