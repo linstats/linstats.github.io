@@ -166,7 +166,7 @@ awards:
     awarder: University of Michigan, Ann Arbor
     # icon: um
   - title: 'Outstanding Undergraduate Dissertation'
-    certificate_url: uploads/ug-thesis-cert.pdf
+    certificate_url: https://linstats.github.io/uploads/ug-thesis-cert.pdf
     date: '2022-05-30'
     awarder: Southern University of Science and Technology
     # icon: sustech
