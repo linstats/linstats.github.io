@@ -14,6 +14,8 @@ Feel free to download these resources for study or reference. I hope they assist
 
 By using these notes, you **acknowledge** that any reliance on the material is at your own risk. I am not responsible for any errors, omissions, or outcomes resulting from the use of this information. For official guidance or advice, please refer to relevant textbooks, authorities, or professionals in the respective field.
 
+- <a href="files/hw-latex.zip" target="_blank">Homework $\LaTeX$ template</a>
+
 <!-- ### Machine Learning Methods
 
 - <a href="/notes/ml-pca.pdf" target="_blank">Lecture 1: Principal Component Analysis</a>
