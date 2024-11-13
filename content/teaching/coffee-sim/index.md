@@ -1,6 +1,6 @@
 ---
 title: How Many Coffees Can I Buy?
-summary: Using computer simulation to solve probability question
+summary: "For beginners with no background in statistics: Using computer simulation to solve probability question."
 date: 2024-11-13
 type: docs
 math: false
