@@ -1,6 +1,6 @@
 ---
 title: Understanding Sample Space in Statistics
-summary: "A guide for beginners in statistics: Bridging the gap between probability and statistics with an introductory concept"
+summary: "A guide for beginners in statistics major: Bridging the gap between probability and statistics with an introductory concept"
 date: 2024-11-13
 type: docs
 math: false
@@ -17,7 +17,9 @@ $
 (X_1, X_2,\dots,X_{10}).
 $
 {{< /math >}}
-However, what is the underlying sample space (a foundational concept from probability) associated with these samples? Specifically, let's take an element
+However, what is the underlying sample space (a foundational concept from probability) associated with these samples? 
+
+Specifically, let's take an element
 {{< math >}}
 $
 \omega\in\Omega,
