@@ -14,8 +14,16 @@ Feel free to download these resources for study or reference. I hope they assist
 
 By using these notes, you **acknowledge** that any reliance on the material is at your own risk. I am not responsible for any errors, omissions, or outcomes resulting from the use of this information. For official guidance or advice, please refer to relevant textbooks, authorities, or professionals in the respective field.
 
-All notes are generated using <a href="files/hw-latex.zip" target="_blank">this custom \(\LaTeX\) template</a>, designed specifically for statistics students with helpful shortcuts. You’re welcome to use it as a template for your homework.
+All notes are generated using <a href="files/hw-latex.zip" target="_blank">this custom \(\LaTeX\) template</a>, designed specifically for statistics students with helpful shortcuts. The videos in this section are produced with Keynote, the MacOS presentation software, using <a href="files/NUS-keynote.key" target="_blank">this custom template</a>. I would be very happy if they could be helpful in your homeworks or presentations!
 ![Latex template](files/tch-notes-fig1.png)
+
+<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; width: 100%;">
+  <video controls style="width: 100%;">
+    <source src="../coffee-sim/images/6120-v2tut-simulation.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="text-align: center; width: 100%;">An Example of Keynote Template</p>
+</div>
 
 <!-- ### Machine Learning Methods
 
