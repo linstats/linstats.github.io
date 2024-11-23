@@ -175,6 +175,6 @@ awards:
 
 I’m Zhu Xuelin, born and raised in China. Currently, I’m pursuing a PhD in statistics, and I’m also an amateur badminton player.
 
-My research interests lie at the intersection of functional data analysis and deep learning. I am particularly focused on exploring the universal approximation theorem as it applies to deep neural networks for modeling and analyzing functional data.
+My research focuses on developing deep learning methodologies and applications for analyzing functional data, including curves, images, and audio signals.
 
 In addition to my academic and professional endeavors, I am passionate about badminton. I was a member of the Southern University of Science and Technology’s campus team, where I specialized in men’s doubles.
