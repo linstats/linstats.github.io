@@ -25,5 +25,5 @@ If you’re curious about the answer, check out the video!
 For a theoretical justification (a little probability theory is needed), you can watch the video (in Chinese) below:
 
 <div style="max-width: 100%;">
-  <iframe src="https://www.youtube.com/embed/DXUTO7k_ym0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="450"> </iframe>
+  <iframe src="https://www.youtube.com/embed/DpiuByapGmA" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="450"> </iframe>
 </div>
