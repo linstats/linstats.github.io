@@ -1,7 +1,7 @@
 ---
 title: How Many Coffees Can I Buy?
 summary: "A guide for beginners with no statistics background: Solving probability questions using computer simulations."
-date: 2024-11-13
+date: 2025-01-25
 type: docs
 math: false
 tags:
