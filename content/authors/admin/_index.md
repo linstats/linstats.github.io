@@ -177,4 +177,4 @@ I’m Zhu Xuelin, born and raised in China. Currently, I’m pursuing a PhD in s
 
 My research focuses on applied statistics, with particular emphasis on using and developing novel methodologies for sports analytics, including predicting badminton shuttlecock landing positions through technical movement analysis and identifying key contested areas via badminton shot trajectory network analysis.
 
-In addition to my research work, I am passionate about badminton as both a player and researcher. I was a member of the Southern University of Science and Technology's campus team, where I specialized in men's doubles.
+In addition to my research work, I am passionate about badminton as both a player and researcher. I was a member of the Southern University of Science and Technology's campus team, where I specialized in men's doubles. Failed?
