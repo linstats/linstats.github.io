@@ -177,8 +177,8 @@ I’m Zhu Xuelin, born and raised in China. Currently, I’m pursuing a PhD in s
 
 My research focuses on applied statistics, particularly in developing novel approaches for sports analytics, with badminton as a primary application domain for shot placement prediction and tactical analysis.
 
-Beyond my research applications, I am involved in badminton in multiple capacities - as 
-<span style="background-color: #e1f5fe; padding: 2px 6px; border-radius: 3px;">competitive player</span>, 
-<span style="background-color: #f3e5f5; padding: 2px 6px; border-radius: 3px;">professional researcher</span>, 
-<span style="background-color: #e8f5e8; padding: 2px 6px; border-radius: 3px;">part-time referee</span>, and 
-<span style="background-color: #fff3e0; padding: 2px 6px; border-radius: 3px;">occasional coach</span>.
+Beyond my research applications, I am involved in badminton in multiple capacities:
+- **Competitive player**: Former member of SUSTech campus team (men's doubles)
+- **Professional researcher**: Developing novel approaches for sports analytics
+- **Part-time referee**: Certified amateur referee
+- **Occasional coach**: Teaching friends and fellow players
