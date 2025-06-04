@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: PhD Student in Statistics
+role: PhD Candidate in Statistics
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -47,9 +47,9 @@ profiles:
   #   url: https://orcid.org/
 
 interests:
-  - Deep Neural Network
-  - Functional Data
-  - Statistical Theory
+  - Network Analysis
+  - Applied Statistics
+  - Machine Learning
 
 education:
   - area: PhD in Statistics (in Progress)
@@ -175,6 +175,6 @@ awards:
 
 I’m Zhu Xuelin, born and raised in China. Currently, I’m pursuing a PhD in statistics, and I’m also an amateur badminton player.
 
-My research focuses on developing deep learning methodologies and applications for analyzing functional data, including curves, images, and audio signals.
+My research focuses on applied statistics, with particular emphasis on using and developing novel methodologies for sports analytics, including predicting badminton shuttlecock landing positions through technical movement analysis and identifying key contested areas via badminton shot trajectory network analysis.
 
-In addition to my academic and professional endeavors, I am passionate about badminton. I was a member of the Southern University of Science and Technology’s campus team, where I specialized in men’s doubles.
+In addition to my research work, I am passionate about badminton as both a player and researcher. I was a member of the Southern University of Science and Technology's campus team, where I specialized in men's doubles.
