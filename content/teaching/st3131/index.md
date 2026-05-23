@@ -3,7 +3,7 @@ title: "ST3131 Tutorial Materials"
 summary: Supplementary (unofficial) notes and slides for ST3131
 date: 2026-04-25
 type: docs
-math: false
+math: true
 tags:
   - Singapore
 image:
@@ -16,7 +16,7 @@ Please note that these are **NOT** the official materials for the current offeri
 
 #### Linear Regression Basics
 
-If you are confused by how $\hat{\beta}$, $\mathrm{s.e.}(\hat{\beta})$, the t-value, or confidence intervals are computed in `R`, the following references may be helpful:
+If you are confused by how $\hat{\beta}$, $\mathrm{s.e.}(\hat{\beta})$, the t-value, or confidence intervals are computed in <code>R</code>, the following references may be helpful:
 
 - <a href="files/table-SLR.pdf" target="_blank">This SLR table</a> for simple linear regression. It also includes a summary of ANOVA.
 - <a href="files/table-MLR.pdf" target="_blank">This MLR table</a> for multiple linear regression. It also includes a summary of ANOVA.
@@ -35,7 +35,7 @@ In Tutorial 6, we will go through the regression model assumptions in more detai
 
 #### Multicollinearity
 
-Multicollinearity can create difficulties in computation, whether in `R` or `Python`.
+Multicollinearity can create difficulties in computation, whether in <code>R</code> or <code>Python</code>.
 
 - <a href="files/slides-MC.pdf" target="_blank">These Tutorial 7 slides</a> introduce what multicollinearity is and why it causes trouble.
 - <a href="files/slides-solve-MC.pdf" target="_blank">These Tutorial 8 slides</a> introduce how to detect multicollinearity and some common remedies.
