@@ -1,5 +1,5 @@
 ---
-title: "Badminton and Friendship in Ann Arbor"
+title: "Ann Arbor Days"
 summary: How badminton helped me build friendships and reshape my playing style during my time in Ann Arbor.
 date: 2024-05-01
 type: docs
