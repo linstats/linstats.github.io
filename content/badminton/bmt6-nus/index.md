@@ -1,6 +1,6 @@
 ---
-title: "NUS Days"
-summary: How my passion for badminton continued in NUS.
+title: "NUS Badminton in PGPR"
+summary: My passion for badminton continued in NUS.
 date: 2026-05-01
 type: docs
 math: false
@@ -12,11 +12,11 @@ image:
 
 After arriving at NUS in the summer of 2024, badminton once again brought wonderful people into my life. Through the court, I became close friends with **Rishabh Batra** and **Song Yiyang**, and playing with them has been one of the happiest parts of my time in Singapore.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 3px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-1.jpg" alt="Eating out with Rishabh" style="width: 100%;">
   </div>
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-2.jpg" alt="Playing with Yiyang" style="width: 100%;">
   </div>
 </div>
@@ -35,23 +35,23 @@ Playing doubles with Yiyang has been another memorable part of my badminton life
 
 Over these two years, badminton has once again become the center of my social life. Many of my closest friends in Singapore come from the badminton community, and I feel deeply grateful that the sport has brought us together. The joy of meeting them, building these friendships, and sharing so many games on court has made this chapter of my life especially meaningful.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 3px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-3.jpg" alt="Memory 3" style="width: 100%;">
   </div>
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-6.jpg" alt="Memory 4" style="width: 100%;">
   </div>
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-8.jpg" alt="Memory 5" style="width: 100%;">
   </div>
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-7.jpg" alt="Memory 6" style="width: 100%;">
   </div>
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-4.jpg" alt="Memory 7" style="width: 100%;">
   </div>
-  <div style="flex-basis: 48%; margin-bottom: 10px;">
+  <div style="flex-basis: 48%; margin-bottom: 3px;">
     <img src="images/bmt6-5.jpg" alt="Memory 8" style="width: 100%;">
   </div>
 </div>
