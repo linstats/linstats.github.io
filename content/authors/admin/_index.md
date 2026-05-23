@@ -183,4 +183,4 @@ I’m Zhu Xuelin, born and raised in China. I am currently pursuing a PhD in Sta
 
 My research lies in **applied statistics** and **machine learning**. I am particularly interested in developing interpretable methods for high-dimensional structured data, such as network and tensor data, with applications in finance, medical imaging, and badminton analytics.
 
-Badminton has long been an important part of my life. Beyond research, I am also involved in the sport as a competitive **player**, part-time **umpire**, and occasional **coach**. I was a member of the Southern University of Science and Technology campus team, where **I specialized in men’s doubles**.
+Beyond research, I am also involved in badminton as a competitive **player**, part-time **umpire**, and occasional **coach**. I was a member of the Southern University of Science and Technology campus team, where **I specialized in men’s doubles**.
