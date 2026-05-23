@@ -21,9 +21,9 @@ After arriving at NUS in the summer of 2024, badminton once again brought wonder
   </div>
 </div>
 
-Playing singles with Rishabh is always a tough challenge for me. He plays at an incredibly fast pace. Every game against him pushes me to my limit, not only physically but also mentally, as I have to keep thinking about better shot choices. I am especially grateful that, among the many strong badminton players I have met, he is the first one who has consistently been willing to play with me. Through these games, I have learned a great deal from him, though I lost so badly that I smashed my racket 😅. Over time, we have also built a close friendship. He even brought me to some of his favorite Indian and burger places.
+Playing singles with Rishabh is always a tough challenge for me. He plays at an incredibly fast pace. Every game against him pushes me to my limit, not only physically but also mentally, as I have to keep thinking about better shot choices. I am especially grateful that, among the many strong badminton players I have met, he is the first one who has consistently been willing to play with me. Through these games, I have learned a great deal from him, though I lost so badly that I smashed my racket😅. Over time, we have also built a close friendship. He even brought me to some of his favorite Indian and burger places.
 
-Playing doubles with Yiyang has been another memorable part of my badminton life here. At first, I honestly thought this always-serious-looking player did not like me at all 🤬. But as time went on, we gradually got to know each other better, started talking more, smiling more, and discussing tactics both on and off the court. Whenever he is covering the back court, I always feel reassured.
+Playing doubles with Yiyang has been another memorable part of my badminton life here. At first, I honestly thought this always-serious-looking player did not like me at all🤬. But as time went on, we gradually got to know each other better, started talking more, smiling more, and discussing tactics both on and off the court. Whenever he is covering the back court, I always feel reassured.
 
 <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; width: 100%;">
   <video controls style="width: 100%;">
