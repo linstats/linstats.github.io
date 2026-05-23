@@ -14,33 +14,36 @@ I served as a teaching assistant for ST3131 in AY25/26 Semester 2. While going t
 
 Please note that these are **NOT** the official materials for the current offering of the course. If you rely on any of the material here, please do so at your own discretion. For official guidance, always refer to your course instructor and the current Canvas page.
 
-#### Linear Regression Basics
+### Linear Regression Basics
 
-If you are confused by how $\hat{\beta}$, $\mathrm{s.e.}(\hat{\beta})$, the t-value, or confidence intervals are computed in <code>R</code>, the following references may be helpful:
+If you are confused by how $\hat{\beta}$, $\mathrm{se}(\hat{\beta})$, the t-value, or confidence intervals are computed in <code>R</code>, the following references may be helpful:
 
 - <a href="files/table-SLR.pdf" target="_blank">This SLR table</a> for simple linear regression. It also includes a summary of ANOVA.
 - <a href="files/table-MLR.pdf" target="_blank">This MLR table</a> for multiple linear regression. It also includes a summary of ANOVA.
 
-#### Linear Regression Extensions
+### Tutorial 3: Some Extensions
 
-In Tutorial 3, we will encounter:
+- The difference between the Confidence Interval (CI) and the Prediction Interval (PI)
+- Another way to interpret the coefficient $\hat{\beta}$ in the model
+- Proving that $\mathrm{SampCor}(x,y)=\sqrt{R^2}$ in simple linear regression
 
-- the difference between the Confidence Interval (CI) and the Prediction Interval (PI),
-- another way to interpret the coefficient $\hat{\beta}$ in the model,
-- proving that $\mathrm{SampCor}(x,y)=\sqrt{R^2}$ in simple linear regression.
+If you are interested, you can read <a href="files/notes-extension-in-SLR.pdf" target="_blank">this Tutorial 3 extension note</a>.
 
-If you are interested, you can read <a href="files/notes-extension-in-SLR.pdf" target="_blank">this extension note</a> for Tutorial 3.
+### Tutorial 6: Model Assumptions
 
-In Tutorial 6, we will go through the regression model assumptions in more detail, including what they mean and how to deal with possible violations in practice. In <a href="files/notes-model-assumptions.pdf" target="_blank">this extension note</a> for Tutorial 6, I use a dataset as a concrete example to show how these assumptions can be checked.
+- What regression model assumptions mean
+- How to deal with possible violations in practice
 
-#### Multicollinearity
+In <a href="files/notes-model-assumptions.pdf" target="_blank">this note</a>, we use a dataset as a concrete example to show how these assumptions can be checked.
+
+### Tutorial 7 & 8: Multicollinearity
 
 Multicollinearity can create difficulties in computation, whether in <code>R</code> or <code>Python</code>.
 
 - <a href="files/slides-MC.pdf" target="_blank">These Tutorial 7 slides</a> introduce what multicollinearity is and why it causes trouble.
 - <a href="files/slides-solve-MC.pdf" target="_blank">These Tutorial 8 slides</a> introduce how to detect multicollinearity and some common remedies.
 
-#### Logistic Regression
+### Tutorial 10: Logistic Regression
 
 Linear regression (SLR/MLR) is used when the response variable $y$ is continuous. But what should we use when facing a classification problem, for example when $y$ takes only two values such as male/female?
 
