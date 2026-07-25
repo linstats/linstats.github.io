@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">ArrowTrainer badminton footwork trainer</title>
+  <desc id="desc">Six directional arrows around a circular start control on a badminton-court-inspired background.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#083344"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <radialGradient id="circle" cx="35%" cy="28%" r="75%">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#022c22" flood-opacity=".38"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#background)"/>
+  <g fill="none" stroke="#ccfbf1" stroke-opacity=".22" stroke-width="6">
+    <rect x="145" y="70" width="910" height="660" rx="8"/>
+    <path d="M600 70v660M145 400h910M145 235h910M145 565h910"/>
+    <path d="M310 70v660M890 70v660"/>
+  </g>
+
+  <g fill="none" stroke="#fef3c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="32">
+    <path d="M505 306 394 195m0 0h74m-74 0v74"/>
+    <path d="m695 306 111-111m0 0h-74m74 0v74"/>
+    <path d="M436 400H266m0 0 54-54m-54 54 54 54"/>
+    <path d="M764 400h170m0 0-54-54m54 54-54 54"/>
+    <path d="m505 494-111 111m0 0h74m-74 0v-74"/>
+    <path d="m695 494 111 111m0 0h-74m74 0v-74"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <circle cx="600" cy="400" r="126" fill="url(#circle)"/>
+    <circle cx="600" cy="400" r="126" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="6"/>
+    <path d="M575 339v122l104-61z" fill="#0f766e"/>
+  </g>
+
+  <text x="600" y="118" fill="#f8fafc" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="42" font-weight="700" letter-spacing="2" text-anchor="middle">ARROWTRAINER</text>
+  <text x="600" y="686" fill="#ccfbf1" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="27" letter-spacing="1" text-anchor="middle">BADMINTON FOOTWORK &amp; REACTION TRAINER</text>
+</svg>
