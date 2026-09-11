@@ -2,3 +2,9 @@
 content/.DS_Store
 AGENTS.md
 content/authors/admin/avatar-1.jpg
+
+# Local Hugo preview output
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/hugo_stats.json
