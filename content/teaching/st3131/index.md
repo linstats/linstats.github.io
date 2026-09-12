@@ -5,7 +5,7 @@ date: 2026-04-25
 type: docs
 math: true
 tags:
-  - Singapore
+  - NUS ST3131
 image:
   caption: "ST3131 Tutorial"
 ---

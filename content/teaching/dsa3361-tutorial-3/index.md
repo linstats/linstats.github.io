@@ -8,8 +8,7 @@ image:
   filename: permutation-tails.png
   caption: "Permutation distribution and two-sided p-value"
 tags:
-  - Statistics
-  - DSA3361
+  - DSA3361 Tutorial
 ---
 
 *Adapted from NUS DSA3361 Tutorial 3 — Inferential Data Analytics.*
