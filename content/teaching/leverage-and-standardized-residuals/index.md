@@ -11,15 +11,15 @@ tags:
   - DSA3361 Tutorial
 ---
 
-> Before we begin, it helps to have a basic idea of the matrix form of linear regression:
->
-> \(\hat{\beta}=(X^TX)^{-1}X^Ty\;\;\Rightarrow\;\;\hat{y}=X\hat{\beta}\;\;\Rightarrow\;\;H=X(X^TX)^{-1}X^T\;\;\Rightarrow\;\;h_{ii}=H_{ii}\).
-
 When we first encounter regression, we often feel that estimating \(\hat{\beta}\) and obtaining the prediction equation \(\hat{y}=X\hat{\beta}\) should be enough. But courses usually do not stop there. We continue by looking more closely at the hat matrix \(H\), leverage values \(h_{ii}\), and related ideas.
+
+> **Prerequisite:** the matrix form of linear regression, especially
+>
+> \(\hat{\beta}=(X^TX)^{-1}X^Ty\;\;\Rightarrow\;\;\hat{y}=X\hat{\beta}\;\;\Rightarrow\;\;H=X(X^TX)^{-1}X^T\).
 
 We will answer two questions that may be on your mind:
 
-- **Why do we call \(h_{ii}\) leverage values? Or why it measures leverage?**
+- **Why do we call \(h_{ii}=H_{ii}\) leverage values? Or why it measures leverage?**
 - **Why does \(h_{ii}\) matter when we analyse residuals?**
 
 For simplicity, we will focus entirely on simple linear regression (SLR). Suppose that we have five observations: \((x_1,y_1), \ldots,(x_5,y_5),\)
