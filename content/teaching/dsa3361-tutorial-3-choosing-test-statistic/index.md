@@ -3,6 +3,9 @@ title: "Choosing a Quantity for a Permutation Test"
 summary: "An optional example of how the question we ask guides the statistic we use."
 type: docs
 math: true
+url: /teaching/dsa3361-tutorial-3/choosing-test-statistic/
+build:
+  list: never
 ---
 
 ## What should we recalculate?

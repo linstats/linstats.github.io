@@ -3,6 +3,9 @@ title: "Why Use the Smaller Tail?"
 summary: "An optional note on the two-sided permutation p-value."
 type: docs
 math: true
+url: /teaching/dsa3361-tutorial-3/two-sided-p-value/
+build:
+  list: never
 ---
 
 ## Why define the two-sided p-value as `2 × min(p_left, p_right)` instead of using `max`?
