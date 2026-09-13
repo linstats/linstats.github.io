@@ -1,11 +1,11 @@
 ---
-title: How Many Coffees Can I Buy?
-summary: "A guide for beginners with no statistics background: Solving probability questions using computer simulations."
+title: "How Many Cups of Coffee Can I Buy with $10?"
+summary: "A beginner-friendly introduction to probability simulation: estimating how many cups of coffee you can buy when prices vary randomly from $0 to $10."
 date: 2025-01-25
 type: docs
 math: false
 tags:
-  - Singapore
+  - Probability
 image:
   caption: 'Coffee'
 ---

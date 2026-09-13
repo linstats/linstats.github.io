@@ -1,11 +1,12 @@
 ---
-title: Understanding Sample Space in Statistics
-summary: "A guide for beginners in statistics major: Bridging the gap between probability and statistics with an introductory concept"
+title: "What Is the Sample Space in Statistics?"
+summary: "An intuitive introduction to sample spaces, random variables, and iid samples for students connecting probability with statistics."
 date: 2024-11-13
 type: docs
 math: false
 tags:
-  - Singapore
+  - Probability
+  - Statistics
 image:
   caption: 'Sample Space'
 ---

@@ -1,11 +1,12 @@
 ---
-title: Lecture Notes Now Available
-summary: My personal lecture notes for download in PDF format.
+title: "LaTeX & Keynote Templates for Statistics"
+summary: "Custom LaTeX and Keynote templates for creating clear, polished statistics notes, homework solutions, and presentations."
 date: 2025-01-25
 type: docs
 math: false
 tags:
-  - Singapore
+  - LaTeX
+  - Keynote
 image:
   caption: 'MC Decomposition'
 ---

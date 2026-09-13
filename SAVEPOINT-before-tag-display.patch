@@ -1,0 +1,28 @@
+diff --git a/content/teaching/dsa3361-tutorial-3/index.md b/content/teaching/dsa3361-tutorial-3/index.md
+index f16d2e2..b26078c 100644
+--- a/content/teaching/dsa3361-tutorial-3/index.md
++++ b/content/teaching/dsa3361-tutorial-3/index.md
+@@ -8,7 +8,7 @@ image:
+   filename: permutation-tails.png
+   caption: "Permutation distribution and two-sided p-value"
+ tags:
+-  - DSA3361 Tutorial
++  - Permutation Test
+ ---
+ 
+ *Adapted from NUS DSA3361 Tutorial 3 — Inferential Data Analytics.*
+diff --git a/content/teaching/leverage-and-standardized-residuals/index.md b/content/teaching/leverage-and-standardized-residuals/index.md
+index 22af8d5..76c89db 100644
+--- a/content/teaching/leverage-and-standardized-residuals/index.md
++++ b/content/teaching/leverage-and-standardized-residuals/index.md
+@@ -8,9 +8,11 @@ image:
+   filename: featured-v2.png
+   caption: "A high-leverage point can pull the fitted regression line"
+ tags:
+-  - DSA3361 Tutorial
++  - Linear Regression
+ ---
+ 
++*Adapted from NUS DSA3361 Tutorial 4 — Inferential Data Analytics.*
++
+ When we first encounter regression, we often feel that estimating \(\hat{\beta}\) and obtaining the prediction equation \(\hat{y}=X\hat{\beta}\) should be enough. But courses usually do not stop there. We continue by looking more closely at the hat matrix \(H\), leverage values \(h_{ii}\), and related ideas.

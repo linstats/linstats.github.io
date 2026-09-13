@@ -1,11 +1,11 @@
 ---
-title: "ST3131 Tutorial Materials"
-summary: Supplementary (unofficial) notes and slides for ST3131
+title: "ST3131 Regression Tutorials"
+summary: "Unofficial supplementary notes and slides covering key regression topics from my ST3131 tutorials."
 date: 2026-04-25
 type: docs
 math: true
 tags:
-  - NUS ST3131
+  - Linear Regression
 image:
   caption: "ST3131 Tutorial"
 ---
