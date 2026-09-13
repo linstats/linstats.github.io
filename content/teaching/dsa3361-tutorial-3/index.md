@@ -8,6 +8,7 @@ image:
   filename: permutation-tails.png
   caption: "Permutation distribution and two-sided p-value"
 tags:
+  - DSA3361
   - Permutation Test
   - Bootstrap
 ---

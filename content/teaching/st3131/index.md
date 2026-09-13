@@ -5,6 +5,7 @@ date: 2026-04-25
 type: docs
 math: true
 tags:
+  - ST3131
   - Linear Regression
 image:
   caption: "ST3131 Tutorial"

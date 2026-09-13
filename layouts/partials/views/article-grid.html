@@ -18,7 +18,7 @@
   <div>
     <div class="flex gap-1">
       {{ range $index, $tag := $item.GetTerms "tags" }}
-      {{ if $index }}<span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">&amp;</span>{{ end }}
+      {{ if $index }}<span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">|</span>{{ end }}
       <a href="{{ $tag.RelPermalink }}"><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">{{ $tag.Page.LinkTitle }}</span></a>
       {{ end }}
     </div>

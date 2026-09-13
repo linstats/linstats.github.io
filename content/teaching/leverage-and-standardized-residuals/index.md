@@ -8,6 +8,7 @@ image:
   filename: featured-v2.png
   caption: "A high-leverage point can pull the fitted regression line"
 tags:
+  - DSA3361
   - Linear Regression
 ---
 
