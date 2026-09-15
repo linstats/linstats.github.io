@@ -12,7 +12,7 @@ tags:
   - Linear Regression
 ---
 
-*Adapted from NUS DSA3361 Tutorial 4 — Inferential Data Analytics.*
+*Adapted from a student's question in NUS DSA3361.*
 
 When we first encounter regression, we often feel that estimating \(\hat{\beta}\) and obtaining the prediction equation \(\hat{y}=X\hat{\beta}\) should be enough. But courses usually do not stop there. We continue by looking more closely at the hat matrix \(H\), leverage values \(h_{ii}\), and related ideas.
 

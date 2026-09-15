@@ -13,7 +13,7 @@ tags:
   - Bootstrap
 ---
 
-*Adapted from NUS DSA3361 Tutorial 3 — Inferential Data Analytics.*
+*Adapted from NUS DSA3361 Tutorial 3.*
 
 Everyone loves chicken wings—including students at NUS! Imagine we asked a group of boys and girls how many chicken wings they could eat. Here are their answers:
 
