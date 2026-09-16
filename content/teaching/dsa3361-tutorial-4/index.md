@@ -4,6 +4,9 @@ summary: "Create data with a known linear relationship, add random noise, and se
 date: 2026-09-13
 type: docs
 math: true
+image:
+  filename: featured.png
+  caption: "Observed data, the true relationship, and a fitted quadratic curve"
 tags:
   - DSA3361
   - Linear Regression
