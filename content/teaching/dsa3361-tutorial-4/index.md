@@ -498,10 +498,10 @@ With `np.random.seed(123)`, the realised values (rounded to two decimal places) 
 
 $$
 \begin{aligned}
-\texttt{x}=\begin{pmatrix}x_1\\x_2\\\vdots\\x_{100}\end{pmatrix}
-= \begin{pmatrix}-1.09\\1.00\\\vdots\\-0.38\end{pmatrix} \;\;\text{and}\;\;
-\texttt{eps}=\begin{pmatrix}\epsilon_1\\\epsilon_2\\\vdots\\\epsilon_{100}\end{pmatrix}
-= \begin{pmatrix}0.32\\-0.99\\\vdots\\-0.11\end{pmatrix}
+\texttt{x}=\begin{bmatrix}x_1\\x_2\\\vdots\\x_{100}\end{bmatrix}
+= \begin{bmatrix}-1.09\\1.00\\\vdots\\-0.38\end{bmatrix} \;\;\text{and}\;\;
+\texttt{eps}=\begin{bmatrix}\epsilon_1\\\epsilon_2\\\vdots\\\epsilon_{100}\end{bmatrix}
+= \begin{bmatrix}0.32\\-0.99\\\vdots\\-0.11\end{bmatrix}
 \end{aligned}
 $$
 
@@ -529,12 +529,12 @@ print(f"beta1_hat = {beta1_hat:.4f}")
 Our model includes an intercept, \(Y_i=\beta_0+\beta_1X_i+\epsilon_i\). To estimate that intercept, we add a column of 1s to the predictor vector. The result is the design matrix
 
 $$
-X=\begin{pmatrix}
+X=\begin{bmatrix}
 1 & x_1\\
 1 & x_2\\
 \vdots & \vdots\\
 1 & x_{100}
-\end{pmatrix}.
+\end{bmatrix}.
 $$
 
 The first column goes with the intercept \(\beta_0\), and the second column goes with the slope \(\beta_1\). 
@@ -612,7 +612,6 @@ html[style*="color-scheme: dark"] #ols-code-explanation { --ols-green: #8ec9a9; 
   const fullCode = originalCode.textContent;
   const nodes = [...originalCode.childNodes];
   const highlight = pre.parentElement;
-  const units = [];
   const explanations = {
     'X = sm.add_constant(x)': document.getElementById('constant-explanation'),
     'model = sm.OLS(y, X).fit()': document.getElementById('model-explanation')
@@ -642,10 +641,6 @@ html[style*="color-scheme: dark"] #ols-code-explanation { --ols-green: #8ec9a9; 
     explanation.hidden = false;
     explanation.classList.add('ols-explanation-body');
     unit.append(summary, explanation); fragment.appendChild(unit);
-    units.push(unit);
-    unit.addEventListener('toggle', () => {
-      if(unit.open) units.forEach(other => {if(other !== unit) other.open = false;});
-    });
     startSegment();
   });
   fragment.querySelectorAll('pre').forEach(segment => {
@@ -973,165 +968,785 @@ In practice, for a dataset we have collected, who knows the true relationship le
 \]
 
 and let’s see what happens. The data \(x\) and \(y\) are already available from above, so we can create the extra predictor \(x^2\), fit the model, and inspect its summary:
-
 <div id="quadratic-code-workspace">
 
 ```python
 # Recall: x and y are already generated above.
+
 x1 = x
 x2 = x**2
-X = sm.add_constant(np.column_stack([x1, x2]))
+
+X_predictors = np.column_stack([x1, x2])
+
+X = sm.add_constant(X_predictors)
+
 model2 = sm.OLS(y, X).fit()
 ```
 
+<div id="quadratic-regressors-explanation" hidden>
+
+<p>
+When we fit a model with multiple regressors, we store each regressor as a separate column.
+Here, <code>x1</code> contains the values of \(x\), while <code>x2</code> contains the corresponding values of \(x^2\):
+</p>
+
+<div class="quadratic-math">$$\texttt{x1}=\begin{bmatrix}x_1\\x_2\\\vdots\\x_{100}\end{bmatrix},\qquad\texttt{x2}=\begin{bmatrix}x_1^2\\x_2^2\\\vdots\\x_{100}^2\end{bmatrix}.$$</div>
+
+<p>
+So although <code>x2</code> is created from <code>x1</code>, the computer will later treat them as two separate regressors.
+</p>
+
+</div>
+
+<div id="quadratic-stack-explanation" hidden>
+
+<p>
+We first use <code>np.column_stack([x1, x2])</code> to place
+<code>x1</code> and <code>x2</code> side by side as two columns:
+</p>
+
+<div class="quadratic-math">$$\texttt{X\_predictors}\xlongequal{\text{in Python}}\begin{bmatrix}\big| & \big|\\\texttt{x1} & \texttt{x2}\\\big| & \big|\end{bmatrix}\xlongequal{\text{in practice}}\begin{bmatrix}x_1 & x_1^2\\x_2 & x_2^2\\\vdots & \vdots\\x_{100} & x_{100}^2\end{bmatrix}.$$</div>
+
+<p>
+Each row corresponds to one observation, while each column corresponds to one regressor.
+</p>
+
+</div>
+
 <div id="quadratic-constant-explanation" hidden>
-Here <code>np.column_stack([x1, x2])</code> puts \(x\) and \(x^2\) side by side as two predictor columns. Then <code>sm.add_constant(...)</code> adds a column of 1s, so the quadratic model can estimate an intercept together with the coefficients of \(x\) and \(x^2\).
+
+<p>
+Next, we use <code>sm.add_constant(X_predictors)</code> to add a column of 1s:
+</p>
+
+<div class="quadratic-math">$$\texttt{X}\xlongequal{\text{in Python}}\begin{bmatrix}\big| & \big| & \big|\\1 & \texttt{x1} & \texttt{x2}\\\big| & \big| & \big|\end{bmatrix}\xlongequal{\text{in practice}}\begin{bmatrix}1 & x_1 & x_1^2\\1 & x_2 & x_2^2\\\vdots & \vdots & \vdots\\1 & x_{100} & x_{100}^2\end{bmatrix}.$$</div>
+
+<p>
+Why do we need this extra column of 1s? Keep reading — the next line will make its role clear.
+</p>
+
 </div>
 
 <div id="quadratic-model-explanation" hidden>
-Here <code>sm.OLS(y, X).fit()</code> fits the quadratic model using the three columns in \(X\): a column of 1s for the intercept, \(x\), and \(x^2\). The fitted object stores the estimated coefficients for \(\hat\beta_0\), \(\hat\beta_1\), and \(\hat\beta_2\).
+
+<p>
+When we run <code>sm.OLS(y, X).fit()</code>, <code>statsmodels</code> treats each column of
+\(X\) as one regressor used to explain the response \(y\).
+</p>
+
+<p>Here,</p>
+
+<div class="quadratic-math">$$y=\begin{bmatrix}y_1\\y_2\\\vdots\\y_{100}\end{bmatrix},\qquad X=\begin{bmatrix}1 & x_1 & x_1^2\\1 & x_2 & x_2^2\\\vdots & \vdots & \vdots\\1 & x_{100} & x_{100}^2\end{bmatrix}.$$</div>
+
+<p>
+Therefore, the three columns of \(X\) correspond to the three terms in
+</p>
+
+<div class="quadratic-math">$$\hat y=\hat\beta_0\cdot 1+\hat\beta_1x+\hat\beta_2x^2.$$</div>
+
+<p>
+In other words, the column of 1s gives us the intercept,
+the <code>x1</code> column gives us the \(x\) term,
+and the <code>x2</code> column gives us the \(x^2\) term.
+</p>
+
 </div>
 
-<details id="quadratic-summary-code-box">
-<summary><span class="summary-code-lines"><span>model2.summary()</span></span></summary>
+<div id="quadratic-summary-output" hidden>
+
 <div class="summary-table-output">
+
 <div class="summary-result-title">OLS Regression Results</div>
-<table class="summary-meta-table"><tbody>
-<tr><th>Dep. Variable</th><td>y</td><th>R-squared</th><td>0.568</td></tr>
-<tr><th>Model</th><td>OLS</td><th>Adj. R-squared</th><td>0.559</td></tr>
-<tr><th>Method</th><td>Least Squares</td><th>F-statistic</th><td>63.66</td></tr>
-<tr><th>Prob (F-statistic)</th><td>2.19e-18</td><th>Log-Likelihood</th><td>-69.436</td></tr>
-<tr><th>No. Observations</th><td>100</td><th>Df Residuals</th><td>97</td></tr>
-<tr><th>Df Model</th><td>2</td><th>Covariance Type</th><td>nonrobust</td></tr>
-<tr><th>AIC</th><td>144.9</td><th>BIC</th><td>152.7</td></tr>
-</tbody></table>
-<table class="summary-coef-table"><thead><tr><th></th><th>coef</th><th>std err</th><th>t</th><th>P&gt;|t|</th></tr></thead><tbody>
-<tr><th>const</th><td>-0.9925</td><td>0.065</td><td>-15.315</td><td>&lt;0.001</td></tr>
-<tr><th>x1</th><td>0.4929</td><td>0.044</td><td>11.277</td><td>&lt;0.001</td></tr>
-<tr><th>x2</th><td>-0.0134</td><td>0.033</td><td>-0.403</td><td>0.688</td></tr>
-</tbody></table>
+
+<table class="summary-meta-table">
+<tbody>
+
+<tr>
+<th>Dep. Variable</th>
+<td>y</td>
+<th>R-squared</th>
+<td>0.568</td>
+</tr>
+
+<tr>
+<th>Model</th>
+<td>OLS</td>
+<th>Adj. R-squared</th>
+<td>0.559</td>
+</tr>
+
+<tr>
+<th>Method</th>
+<td>Least Squares</td>
+<th>F-statistic</th>
+<td>63.66</td>
+</tr>
+
+<tr>
+<th>Prob (F-statistic)</th>
+<td>2.19e-18</td>
+<th>Log-Likelihood</th>
+<td>-69.436</td>
+</tr>
+
+<tr>
+<th>No. Observations</th>
+<td>100</td>
+<th>Df Residuals</th>
+<td>97</td>
+</tr>
+
+<tr>
+<th>Df Model</th>
+<td>2</td>
+<th>Covariance Type</th>
+<td>nonrobust</td>
+</tr>
+
+<tr>
+<th>AIC</th>
+<td>144.9</td>
+<th>BIC</th>
+<td>152.7</td>
+</tr>
+
+</tbody>
+</table>
+
+<table class="summary-coef-table">
+<thead>
+<tr>
+<th></th>
+<th>coef</th>
+<th>std err</th>
+<th>t</th>
+<th>P&gt;|t|</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<th>const</th>
+<td>-0.9925</td>
+<td>0.065</td>
+<td>-15.315</td>
+<td>&lt;0.001</td>
+</tr>
+
+<tr>
+<th>x1</th>
+<td>0.4929</td>
+<td>0.044</td>
+<td>11.277</td>
+<td>&lt;0.001</td>
+</tr>
+
+<tr>
+<th>x2</th>
+<td>-0.0134</td>
+<td>0.033</td>
+<td>-0.403</td>
+<td>0.688</td>
+</tr>
+
+</tbody>
+</table>
+
 </div>
-</details>
+
 </div>
+
+</div>
+
 <style>
-#quadratic-code-workspace { margin: .9rem 0; border-radius: 7px; overflow: hidden; background: #f8f8f8; }
-#quadratic-code-workspace { --quadratic-green: #477c65; position: relative; }
-html[style*="color-scheme: dark"] #quadratic-code-workspace { background: #1f2937; --quadratic-green: #8ec9a9; }
-#quadratic-code-workspace .highlight, #quadratic-code-workspace pre { margin: 0 !important; border-radius: 0 !important; }
-#quadratic-code-workspace .highlight { background: transparent !important; }
-#quadratic-code-workspace .highlight button { display: none !important; }
-#quadratic-code-workspace .quadratic-copy-all { position: absolute; z-index: 2; right: .55rem; top: .4rem; padding: .25rem .6rem; border-radius: 5px; border: 0; background: #e5e7eb; color: #243244; cursor: pointer; }
-html[style*="color-scheme: dark"] #quadratic-code-workspace .quadratic-copy-all { background: #374151; color: #e2e8f0; }
-#quadratic-code-workspace .quadratic-explanation-unit { margin: 0; border-left: 3px solid transparent; }
-#quadratic-code-workspace .quadratic-explanation-unit[open] { border-left-color: var(--quadratic-green); background: rgba(90,160,120,.07); }
-#quadratic-code-workspace .quadratic-explanation-unit summary { display: list-item; list-style-position: inside; padding: .45rem .9rem; cursor: pointer; color: var(--quadratic-green); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-#quadratic-code-workspace .quadratic-explanation-unit summary::marker { color: var(--quadratic-green); }
-#quadratic-code-workspace .quadratic-explanation-unit .quadratic-explanation-body { padding: .1rem 1rem .65rem 1.3rem; font-family: inherit; }
-#quadratic-code-workspace .quadratic-explanation-unit .quadratic-explanation-body p { margin: .55rem 0; }
-#quadratic-summary-code-box { margin: .9rem 0; border-radius: 7px; background: #f8f8f8; color: #243244; overflow: hidden; }
-#quadratic-code-workspace #quadratic-summary-code-box { margin: 0; border-radius: 0; border-top: 1px solid rgba(90,160,120,.28); }
-#quadratic-summary-code-box[open] { border-left: 3px solid #477c65; background: #f3f8f5; }
-#quadratic-summary-code-box summary { position: relative; display: block; padding: .7rem 1rem; cursor: pointer; list-style: none; color: #243244; }
-#quadratic-summary-code-box summary::-webkit-details-marker { display: none; }
-#quadratic-summary-code-box summary::before { content: '▸'; position: absolute; left: 1rem; top: .7rem; color: #477c65; font-size: 1.2rem; line-height: 1.3; }
-#quadratic-summary-code-box[open] summary::before { content: '▾'; }
-#quadratic-summary-code-box .summary-code-lines { display: block; margin-left: 1.2rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1rem; line-height: 1.4; }
-#quadratic-summary-code-box .summary-table-output { margin: 0 1rem 1rem 2.25rem; padding-top: .65rem; border-top: 1px solid rgba(90,160,120,.28); overflow-x: auto; }
-#quadratic-summary-code-box .summary-result-title { font-weight: 650; text-align: center; margin-bottom: .5rem; }
-#quadratic-summary-code-box table { width: 100%; min-width: 420px; margin: 0 0 .65rem; border-collapse: collapse; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78rem; background: transparent; }
-#quadratic-summary-code-box th, #quadratic-summary-code-box td { padding: .3rem .45rem; border: 0; background: transparent; white-space: nowrap; }
-#quadratic-summary-code-box .summary-meta-table th { text-align: left; font-weight: 500; }
-#quadratic-summary-code-box .summary-meta-table td { text-align: right; }
-#quadratic-summary-code-box .summary-coef-table { border-top: 1px solid #94a3b8; border-bottom: 1px solid #94a3b8; }
-#quadratic-summary-code-box .summary-coef-table thead { border-bottom: 1px solid #94a3b8; }
-#quadratic-summary-code-box .summary-coef-table th:first-child { text-align: left; }
-#quadratic-summary-code-box .summary-coef-table th:not(:first-child), #quadratic-summary-code-box .summary-coef-table td { text-align: right; }
-html[style*="color-scheme: dark"] #quadratic-summary-code-box { background: #1f2937; color: #e2e8f0; }
-html[style*="color-scheme: dark"] #quadratic-summary-code-box[open] { border-left-color: #8ec9a9; background: #202c29; }
-html[style*="color-scheme: dark"] #quadratic-summary-code-box summary { color: #e2e8f0; }
-html[style*="color-scheme: dark"] #quadratic-summary-code-box summary::before { color: #8ec9a9; }
+
+#quadratic-code-workspace {
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8f8f8;
+  --ols-green: #477c65;
+}
+
+html[style*="color-scheme: dark"] #quadratic-code-workspace {
+  background: #1f2937;
+  --ols-green: #8ec9a9;
+}
+
+#quadratic-code-workspace .highlight,
+#quadratic-code-workspace pre {
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+#quadratic-code-workspace pre {
+  padding-top: .35rem;
+  padding-bottom: .35rem;
+}
+
+#quadratic-code-workspace .highlight {
+  padding: .5rem 0;
+}
+
+#quadratic-code-workspace .highlight button {
+  display: none !important;
+}
+
+#quadratic-code-workspace .quadratic-copy-all {
+  position: absolute;
+  z-index: 2;
+  right: .5rem;
+  top: .4rem;
+  padding: .25rem .6rem;
+  border-radius: 5px;
+  background: #e5e7eb;
+  color: #243244;
+  cursor: pointer;
+}
+
+html[style*="color-scheme: dark"] #quadratic-code-workspace .quadratic-copy-all {
+  background: #374151;
+  color: #e2e8f0;
+}
+
+#quadratic-code-workspace .ols-explanation-unit {
+  margin: 0 .65rem;
+  border-left: 3px solid transparent;
+}
+
+#quadratic-code-workspace .ols-explanation-unit[open] {
+  border-left-color: var(--ols-green);
+  background: rgba(90, 160, 120, .07);
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary {
+  display: list-item;
+  list-style-position: inside;
+  padding: .35rem .5rem;
+  cursor: pointer;
+  color: var(--ols-green);
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary::marker {
+  color: var(--ols-green);
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary code {
+  display: inline;
+  background: transparent;
+  white-space: pre-wrap;
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary code::before,
+#quadratic-code-workspace .ols-explanation-unit summary code::after {
+  content: none;
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary .line {
+  display: inline;
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary .ols-grouped-lines {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary .ols-grouped-lines .line {
+  display: block;
+}
+
+#quadratic-code-workspace .ols-explanation-body {
+  padding: .1rem 1rem .6rem 1.3rem;
+  font-family: inherit;
+}
+
+#quadratic-code-workspace .ols-explanation-body p {
+  margin: .6rem 0;
+}
+
+#quadratic-code-workspace .ols-explanation-unit summary:focus-visible {
+  outline: 2px solid var(--ols-green);
+}
+
+#quadratic-code-workspace .ols-output-unit .ols-explanation-body {
+  margin: .15rem .7rem .4rem 1.3rem;
+  padding: .5rem 0 0;
+  border-top: 1px solid rgba(90, 160, 120, .28);
+}
+
+#quadratic-code-workspace .summary-table-output {
+  overflow-x: auto;
+  color: #243244;
+}
+
+#quadratic-code-workspace .summary-result-title {
+  font-weight: 650;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+#quadratic-code-workspace table {
+  width: 100%;
+  min-width: 420px;
+  margin: 0 0 .65rem;
+  border-collapse: collapse;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .78rem;
+  background: transparent;
+}
+
+#quadratic-code-workspace th,
+#quadratic-code-workspace td {
+  padding: .3rem .45rem;
+  border: 0;
+  background: transparent;
+  white-space: nowrap;
+}
+
+#quadratic-code-workspace .summary-meta-table th {
+  text-align: left;
+  font-weight: 500;
+}
+
+#quadratic-code-workspace .summary-meta-table td {
+  text-align: right;
+}
+
+#quadratic-code-workspace .summary-coef-table {
+  border-top: 1px solid #94a3b8;
+  border-bottom: 1px solid #94a3b8;
+}
+
+#quadratic-code-workspace .summary-coef-table thead {
+  border-bottom: 1px solid #94a3b8;
+}
+
+#quadratic-code-workspace .summary-coef-table th:first-child {
+  text-align: left;
+}
+
+#quadratic-code-workspace .summary-coef-table th:not(:first-child),
+#quadratic-code-workspace .summary-coef-table td {
+  text-align: right;
+}
+
+html[style*="color-scheme: dark"] #quadratic-code-workspace .summary-table-output {
+  color: #e2e8f0;
+}
+
 </style>
+
 <script>
+
 (function () {
+
   const root = document.getElementById('quadratic-code-workspace');
+
   const highlight = root && root.querySelector('.highlight');
+
   const pre = highlight && root.querySelector('pre');
+
   const code = pre && pre.querySelector('code');
+
   if (!root || !highlight || !pre || !code) return;
+
   const fullCode = code.textContent + 'model2.summary()\n';
-  let insertAfter = highlight;
-  const interactiveLines = [
-    {
-      match: 'X = sm.add_constant',
-      label: 'X = sm.add_constant(np.column_stack([x1, x2]))',
-      explanation: document.getElementById('quadratic-constant-explanation')
-    },
-    {
-      match: 'model2 = sm.OLS',
-      label: 'model2 = sm.OLS(y, X).fit()',
-      explanation: document.getElementById('quadratic-model-explanation')
-    }
-  ];
-  interactiveLines.forEach(({ match, label, explanation }) => {
-    const line = [...code.querySelectorAll('.line')].find(node => node.textContent.trim().startsWith(match));
-    if (!line || !explanation) return;
-    line.remove();
+
+  const nodes = [...code.childNodes];
+
+  const explanations = {
+
+    'x2 = x**2':
+      document.getElementById('quadratic-regressors-explanation'),
+
+    'X_predictors = np.column_stack([x1, x2])':
+      document.getElementById('quadratic-stack-explanation'),
+
+    'X = sm.add_constant(X_predictors)':
+      document.getElementById('quadratic-constant-explanation'),
+
+    'model2 = sm.OLS(y, X).fit()':
+      document.getElementById('quadratic-model-explanation')
+
+  };
+
+  const fragment = document.createDocumentFragment();
+
+  let currentCode;
+
+  function startSegment() {
+
+    const segment = pre.cloneNode(false);
+
+    currentCode = code.cloneNode(false);
+
+    segment.appendChild(currentCode);
+
+    fragment.appendChild(segment);
+
+  }
+
+  function makeUnit(line, explanation, isOutput = false) {
+
     const unit = document.createElement('details');
-    unit.className = 'quadratic-explanation-unit';
+
+    unit.className =
+      'ols-explanation-unit' +
+      (isOutput ? ' ols-output-unit' : '');
+
     const summary = document.createElement('summary');
-    summary.textContent = label;
+
+    const summaryCode = code.cloneNode(false);
+
+    summaryCode.appendChild(line);
+
+    summary.appendChild(summaryCode);
+
     explanation.hidden = false;
-    explanation.className = 'quadratic-explanation-body';
+
+    explanation.classList.add('ols-explanation-body');
+
     unit.append(summary, explanation);
-    insertAfter.after(unit);
-    insertAfter = unit;
-  });
-  const copy = document.createElement('button');
-  copy.type = 'button';
-  copy.className = 'quadratic-copy-all';
-  copy.textContent = 'Copy';
-  root.prepend(copy);
-  copy.addEventListener('click', async function () {
-    try {
-      await navigator.clipboard.writeText(fullCode);
-      copy.textContent = 'Copied!';
-    } catch (error) {
-      const field = document.createElement('textarea');
-      field.value = fullCode;
-      field.style.cssText = 'position:fixed;left:-9999px;top:0';
-      document.body.appendChild(field); field.select();
-      copy.textContent = document.execCommand('copy') ? 'Copied!' : 'Copy failed';
-      field.remove();
+
+    fragment.appendChild(unit);
+
+  }
+
+  startSegment();
+
+  nodes.forEach((node, index) => {
+
+    if (node.textContent.trim() === 'x1 = x' &&
+        nodes[index + 1]?.textContent.trim() === 'x2 = x**2') {
+
+      const groupedLines = document.createElement('span');
+
+      groupedLines.className = 'ols-grouped-lines';
+
+      groupedLines.append(node, nodes[index + 1]);
+
+      makeUnit(
+        groupedLines,
+        explanations['x2 = x**2']
+      );
+
+      startSegment();
+
+      return;
+
     }
-    setTimeout(() => { copy.textContent = 'Copy'; }, 2000);
+
+    if (node.textContent.trim() === 'x2 = x**2' &&
+        nodes[index - 1]?.textContent.trim() === 'x1 = x') return;
+
+    const explanation = explanations[node.textContent.trim()];
+
+    if (!explanation) {
+      currentCode.appendChild(node);
+      return;
+    }
+
+    makeUnit(node, explanation);
+
+    startSegment();
+
   });
+
+  fragment.querySelectorAll('pre').forEach(segment => {
+
+    if (!segment.textContent.trim()) {
+      segment.remove();
+    }
+
+  });
+
+  const summaryLine = document.createElement('span');
+
+  summaryLine.className = 'line';
+
+  summaryLine.textContent = 'model2.summary()';
+
+  makeUnit(
+    summaryLine,
+    document.getElementById('quadratic-summary-output'),
+    true
+  );
+
+  highlight.replaceChildren(fragment);
+
+  // These explanation blocks are moved into the code panel after the page's
+  // initial KaTeX pass. Ask the same renderer to typeset their math once the
+  // deferred KaTeX script is ready.
+  function renderQuadraticMath() {
+
+    if (!window.renderMathInElement) return;
+
+    window.renderMathInElement(root, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError: false
+    });
+
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderQuadraticMath, {once: true});
+  } else {
+    renderQuadraticMath();
+  }
+
+  const copy = document.createElement('button');
+
+  copy.type = 'button';
+
+  copy.className = 'quadratic-copy-all';
+
+  copy.textContent = 'Copy';
+
+  root.prepend(copy);
+
+  copy.addEventListener('click', async function () {
+
+    try {
+
+      await navigator.clipboard.writeText(fullCode);
+
+      copy.textContent = 'Copied!';
+
+    } catch (error) {
+
+      const field = document.createElement('textarea');
+
+      field.value = fullCode;
+
+      field.style.cssText =
+        'position:fixed;left:-9999px;top:0';
+
+      document.body.appendChild(field);
+
+      field.select();
+
+      copy.textContent =
+        document.execCommand('copy')
+          ? 'Copied!'
+          : 'Copy failed';
+
+      field.remove();
+
+    }
+
+    setTimeout(() => {
+      copy.textContent = 'Copy';
+    }, 2000);
+
+  });
+
 }());
+
 </script>
 
+Therefore, the fitted quadratic model is \(
+\hat y=-0.9925+0.4929x-0.0134x^2.\) The \(t\)-test suggests that the coefficient of \(x^2\), \(\beta_2\), is not significantly different from \(0\) (Curious? ST3131 covers this😊), and the adjusted \(R^2\) does not improve. In other words, **adding a more complex term did not meaningfully improve the model.**
 
 <details style="margin: 1.25rem 0; padding: 0.85rem 1rem; border: 1px solid #94a3b8; border-radius: 10px;">
-<summary>In general, what did we just do?</summary>
 
-We just did something a little unusual. We did not start with a real dataset and then analyse it. We created a world first.
+<summary><strong>How can we plot the fitted quadratic curve?</strong></summary>
 
-In this world, we decided that
+<p>
+  Just like what we did for the linear model:
+  get the fitted pairs \((x_i,\hat y_i)\) from <code>model2.fittedvalues</code>
+  &rarr; sort them by \(x_i\) from smallest to largest
+  &rarr; connect the fitted points from left to right.
+</p>
+
+```python
+y_pred2 = model2.fittedvalues
+
+order = np.argsort(x)
+
+plt.scatter(x, y, color="black", alpha=0.75, label="Observed data")
+
+plt.plot(
+    x[order],
+    y_pred2[order],
+    color="red",
+    linestyle="--",
+    label="Fitted quadratic curve"
+)
+
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+plt.show()
+```
+
+<p>The fitted curve looks also straight here. But what we actually get is a curve. </p>
+<div id="quadratic-curvature-demo">
+  <div class="curve-controls">
+    <button id="curve-less-noise" type="button">− ε variance</button>
+    <button id="curve-more-noise" type="button">+ ε variance</button>
+    <button id="curve-reset" type="button">Reset</button>
+  </div>
+  <div class="curve-readout" aria-live="polite">
+    <span>Var(ε) = <strong id="curve-variance">0.2500</strong></span>
+    <span>β̂₂ = <strong id="curve-b2-value">−0.0134</strong></span>
+  </div>
+  <p id="curve-equation">ŷ = −0.9925 + 0.4929x − 0.0134x²</p>
+  <svg viewBox="0 0 760 460" role="img" aria-labelledby="curve-title curve-description">
+    <title id="curve-title">Refit the quadratic model under different error variances</title>
+    <desc id="curve-description">Observed data generated from a linear relationship and a red quadratic curve refitted after each new draw of the errors.</desc>
+    <defs><clipPath id="curve-clip"><rect x="64" y="55" width="666" height="345"/></clipPath></defs>
+    <g id="curve-axes"></g>
+    <g clip-path="url(#curve-clip)"><g id="curve-points"></g><path id="curve-reference" fill="none" stroke="#94a3b8" stroke-width="3"/><path id="curve-adjusted" fill="none" stroke="var(--curve-red)" stroke-width="2.5" stroke-dasharray="8 5"/></g>
+    <g font-size="13" fill="currentColor">
+      <circle cx="74" cy="22" r="4" fill="currentColor"/><text x="86" y="27">Observed data</text>
+      <path d="M235 22h26" stroke="#94a3b8" stroke-width="3"/><text x="269" y="27">True relationship</text>
+      <path d="M425 22h26" stroke="var(--curve-red)" stroke-width="2.5" stroke-dasharray="8 5"/><text x="459" y="27">Refitted quadratic curve</text>
+    </g>
+  </svg>
+</div>
+<style>
+#quadratic-curvature-demo { --curve-red: #dc2626; color: #243244; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 1rem; margin: 1rem 0 1.5rem; }
+#quadratic-curvature-demo .curve-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .65rem; }
+#quadratic-curvature-demo button { padding: .35rem .65rem; border: 1px solid #94a3b8; border-radius: 6px; background: transparent; color: inherit; font-size: .85rem; cursor: pointer; }
+#quadratic-curvature-demo button:hover { border-color: var(--curve-red); }
+#quadratic-curvature-demo :focus-visible { outline: 2px solid var(--curve-red); outline-offset: 4px; }
+#quadratic-curvature-demo .curve-readout { display: flex; justify-content: center; flex-wrap: wrap; gap: .5rem 2rem; margin-top: .8rem; font-variant-numeric: tabular-nums; }
+#quadratic-curvature-demo #curve-equation { margin: .8rem 0 .25rem; font-size: 1.15rem; text-align: center; font-variant-numeric: tabular-nums; }
+#quadratic-curvature-demo svg { display: block; width: 100%; height: auto; }
+#quadratic-curvature-demo .curve-note { margin: .4rem 0 0; font-size: .85rem; line-height: 1.5; }
+html.dark #quadratic-curvature-demo, html[style*="color-scheme: dark"] #quadratic-curvature-demo { --curve-red: #f87171; color: #e2e8f0; background: #1f2937; border-color: #475569; }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('quadratic-curvature-demo');
+  const originalData = [[-1.0856306033005612,-1.2217879570143648],[0.9973454465835858,-1.4902712424684315],[0.28297849805199204,-0.5023784332387449],[-1.5062947139180922,-0.45399539332438876],[-0.5786002519685364,-1.3016131167000078],[1.651436537097151,-0.15721066699650474],[-2.426679243393074,-2.1235648793771977],[-0.42891262885617726,-2.1454441698239823],[1.2659362587055338,-0.15395855080207813],[-0.8667404022651016,-2.236075073140533],[-0.6788861516220543,-1.5532828748729295],[-0.09470896893689112,-0.4259197096665769],[1.4913896261242878,-0.6219136649878942],[-0.638901996684651,-1.0688265035586255],[-0.44398195964606546,-0.7156214528448476],[-0.43435127561851733,-1.0778052097612587],[2.205930082725455,-0.5825091936845764],[2.1867860889737862,-0.07284459318881384],[1.004053897878877,0.48173262013358153],[0.386186399174856,-1.8194296819113074],[0.7373685758962422,-0.7692087189849666],[1.490732028150799,-0.5306880216686543],[-0.9358338684023914,-1.4075432526526264],[1.1758290447821034,-0.03797766901533295],[-1.2538806677490124,-0.8225948498634794],[-0.6377515024534103,-1.453991947231284],[0.9071051958003014,-0.14027673711143912],[-1.4286807002259692,-1.4644702776803982],[-0.1400687201886661,-0.8328607111584327],[-0.8617548958596855,-1.712839413693079],[-0.2556193705305969,-1.6264704196532487],[-2.7985891054607244,-2.9493161090407107],[-1.771533104509847,-2.263985156954485],[-0.6998772345979173,-1.1890953293658453],[0.9274624317585825,-0.155794087556544],[-0.1736356827902158,-0.9250834174666603],[0.0028459158968110196,-1.273054590149465],[0.688222711102285,0.24709641051737974],[-0.8795363430090519,-0.6803353596887561],[0.283627323807291,-1.0351863944714412],[-0.8053665180656158,-1.8143989620256407],[-1.7276694941206072,-1.7987272699813188],[-0.390899793755101,-0.561800574350374],[0.5738058624050577,-0.5467145801704126],[0.3385890509998015,-0.5524311220450773],[-0.01183049447881976,-1.1119553083772227],[2.392365265937726,0.42431808056997833],[0.4129121603087788,-0.021271694117541373],[0.9787360059373466,-0.6304663877701823],[2.2381433384979528,0.19072553550291277],[-1.2940853231612488,-1.5201344233058107],[-1.0387882102049535,-1.377531427216958],[1.7437122251229307,-0.8340883254741484],[-0.7980627352410625,-2.3374656955574786],[0.029683230303330227,-1.4949859203092544],[1.0693159694243488,-0.3813708675869915],[0.8907063912931706,-0.27771872135180903],[1.754886181981109,-0.3878941888962576],[1.4956441370334692,0.436450809950388],[1.0693926697057368,-0.5368916523102252],[-0.7727087142471915,-1.3761963580062835],[0.7948626677932181,-0.6995506013797221],[0.31427199450686705,-0.7758506063732339],[-1.326265459940456,-1.3108956929484261],[1.4172990464768525,0.04147624219459184],[0.8072365345785665,-1.045593203015512],[0.045490080631097156,-0.21542307144518769],[-0.2330920609844135,-1.6640592592056656],[-1.198301144700787,-1.5595370653050873],[0.19952407355863258,-1.0374362499818601],[0.46843911944564426,-1.2902762789364215],[-0.8311549842432792,-1.4531377861085553],[1.1622040490995293,-0.7893048620964345],[-1.0972030464830342,-1.512147901603491],[-2.1231003500424417,-1.8600071944115375],[1.0397270908927005,0.25582822993298604],[-0.4033660381021075,-1.0479909097373463],[-0.12602958531301514,-1.3686274628089201],[-0.8375167228250533,-1.6145682667723273],[-1.6059627607174027,-1.7329923273014196],[1.2552373747242185,-0.3256508979068152],[-0.6888689838469215,-0.6146398578092502],[1.6609524881479396,0.5281527089524471],[0.8073081862107286,-0.7758138700157664],[-0.31475814671745994,-1.431700137451829],[-1.0859024011268665,-2.8214785025973628],[-0.732461986720457,-1.6406912000213387],[-1.2125231310951696,-2.0952904185897268],[2.0871133595881854,-0.13385554925331664],[0.16444123022982496,-0.721987263710032],[1.1502055425466322,-0.33630106412718996],[-1.2673520490102275,-1.648660028028885],[0.18103512959700385,-0.8096913796572413],[1.177861938808578,-0.47412791721120684],[-0.335010761933016,-1.0689959146947698],[1.0311144589217425,-2.099970274498785],[-1.0845679120057665,-1.6769307008782606],[-1.363471544618584,-1.7371611328357957],[0.37940061207813613,-0.9809305520642249],[-0.3791764345725522,-1.298561348337747]];
+  const ns = 'http://www.w3.org/2000/svg';
+  const sx = x => 64 + (x + 3) / 6 * 666;
+  const sy = y => 400 - (y + 7) / 12 * 345;
+  function add(parent, tag, attrs, text) {
+    const el = document.createElementNS(ns, tag);
+    Object.entries(attrs).forEach(([k,v]) => el.setAttribute(k,v));
+    if (text !== undefined) el.textContent = text;
+    parent.append(el); return el;
+  }
+  const axes = root.querySelector('#curve-axes');
+  for (let y=-6; y<=4; y+=2) {
+    add(axes,'line',{x1:64,x2:730,y1:sy(y),y2:sy(y),stroke:'currentColor',opacity:.12});
+    add(axes,'text',{x:53,y:sy(y)+5,'text-anchor':'end',fill:'currentColor','font-size':14},y);
+  }
+  for (let x=-3;x<=3;x++) add(axes,'text',{x:sx(x),y:424,'text-anchor':'middle',fill:'currentColor','font-size':14},x);
+  add(axes,'path',{d:'M64 55V400H730',fill:'none',stroke:'currentColor',opacity:.65});
+  add(axes,'text',{x:397,y:451,'text-anchor':'middle',fill:'currentColor','font-size':17},'x');
+  add(axes,'text',{x:22,y:230,'text-anchor':'middle',fill:'currentColor','font-size':17},'y');
+  const points = root.querySelector('#curve-points');
+  let variance = 0.25;
+  function fitQuadratic(data) {
+    const matrix = Array.from({length:3},()=>Array(4).fill(0));
+    data.forEach(([x,y]) => {
+      const row=[1,x,x*x];
+      for (let i=0;i<3;i++) {
+        for (let j=0;j<3;j++) matrix[i][j] += row[i]*row[j];
+        matrix[i][3] += row[i]*y;
+      }
+    });
+    for (let col=0;col<3;col++) {
+      let pivot=col;
+      for (let row=col+1;row<3;row++) if (Math.abs(matrix[row][col])>Math.abs(matrix[pivot][col])) pivot=row;
+      [matrix[col],matrix[pivot]]=[matrix[pivot],matrix[col]];
+      const divisor=matrix[col][col];
+      for (let j=col;j<4;j++) matrix[col][j]/=divisor;
+      for (let row=0;row<3;row++) if (row!==col) {
+        const factor=matrix[row][col];
+        for (let j=col;j<4;j++) matrix[row][j]-=factor*matrix[col][j];
+      }
+    }
+    return matrix.map(row=>row[3]);
+  }
+  function normal() {
+    const u=Math.max(Number.EPSILON,Math.random());
+    const v=Math.random();
+    return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
+  }
+  function curve(beta) {
+    return Array.from({length:241},(_,i) => {
+      const x=-3+i/40;
+      const y=beta[0]+beta[1]*x+beta[2]*x*x;
+      return `${i?'L':'M'}${sx(x).toFixed(2)},${sy(y).toFixed(2)}`;
+    }).join(' ');
+  }
+  function signed(value) {
+    return `${value<0?'−':'+'} ${Math.abs(value).toFixed(4)}`;
+  }
+  function render(data) {
+    const beta=fitQuadratic(data);
+    points.replaceChildren();
+    data.forEach(([x,y])=>add(points,'circle',{cx:sx(x),cy:sy(y),r:3.3,fill:'currentColor',opacity:.75}));
+    root.querySelector('#curve-variance').textContent=variance.toFixed(4);
+    root.querySelector('#curve-b2-value').textContent=beta[2].toFixed(4).replace('-','−');
+    root.querySelector('#curve-equation').textContent=`ŷ = ${beta[0].toFixed(4).replace('-','−')} ${signed(beta[1])}x ${signed(beta[2])}x²`;
+    root.querySelector('#curve-adjusted').setAttribute('d',curve(beta));
+  }
+  function resample() {
+    const data=originalData.map(([x])=>[x,-1+0.5*x+Math.sqrt(variance)*normal()]);
+    render(data);
+  }
+  root.querySelector('#curve-reference').setAttribute('d',curve([-1,0.5,0]));
+  root.querySelector('#curve-less-noise').addEventListener('click',()=>{variance=Math.max(0.03125,variance/2);resample();});
+  root.querySelector('#curve-more-noise').addEventListener('click',()=>{variance=Math.min(2,variance*2);resample();});
+  root.querySelector('#curve-reset').addEventListener('click',()=>{variance=0.25;render(originalData);});
+  render(originalData);
+})();
+</script>
+
+</details>
+
+
+---
+
+## Takeaway: what did we do today?
+
+Today, we started with a world where the true relationship was known:
 
 \[
 Y_i=-1+0.5X_i+\epsilon_i.
 \]
 
-So from the beginning, we know the “correct answers”: the true intercept is \(-1\), and the true slope is \(0.5\). We then generated 100 random observations from this world, pretending that they were data we had collected.
+We then did three things:
 
-This way of deciding how the world works first, and then generating data from it, is called <strong>simulation</strong>. Its biggest advantage is that we know the truth. Even if we only use the 100 sample points to fit a regression line, we can compare the fitted values with the true \(\beta_0=-1\) and \(\beta_1=0.5\) and see how well our method performs.
+- We generated data from this known relationship.
 
-Real data analysis works in the opposite direction. Usually, we only get to observe a set of pairs \((X_i,Y_i)\). We may look at them and think that \(X\) and \(Y\) have an approximately linear relationship, so we propose a model
+- We fitted the correct linear model and found that \(\hat\beta_0=-1.01\) and \(\hat\beta_1=0.49\) recovered the underlying relationship reasonably well.
+
+- We then added an unnecessary quadratic term \(x^2\). It did not meaningfully improve the model, reminding us that a more complicated model is not automatically a better one.
+
+So, back to the title:
+
+> **Can regression recover the truth?**
+
+In this simulated world, yes. When the true relationship is linear and the noise is not too large, linear regression can recover the underlying relationship reasonably well from the observed data.
+
+More generally, what we did today is called a **simulation study**. We first decide how the world works, generate data from that known data-generating mechanism, apply statistical methods, and then check how closely they recover the truth. Because the truth is known, we can directly examine quantities such as
 
 \[
-Y_i=\beta_0+\beta_1X_i+\epsilon_i.
+|\hat\beta-\beta|.
 \]
 
-But this time, we do not know the true values of \(\beta_0\) and \(\beta_1\), and we do not see the individual \(\epsilon_i\)'s. We only see the final \(X_i\)'s and \(Y_i\)'s. The task is to work backwards from the sample and estimate the hidden relationship.
-</details>
+<mark style="background-color: #fff3b0; color: #222;"><strong style="color: #222;">But real-data analysis is different:</strong> There, nobody tells us the true data-generating mechanism. We therefore cannot directly check whether “the truth” has been recovered, because quantities such as \(\beta\) are unknown.</mark>
+
+Instead, when comparing models on real data, we have to rely on quantities that we can actually observe or estimate, such as out-of-sample \(R^2\), MSE, MAE, and other predictive or diagnostic measures. This is often called **empirical evaluation** or **real-data evaluation**.
+
+Both **simulation studies** and **empirical evaluations** are common ways to evaluate statistical methods in research:
+
+- **Simulation studies:** we know the truth and ask whether the method can recover it.
+
+- **Empirical evaluations:** the truth is unknown, so we compare models using observable evidence.
 
 <style>
   html[style*="color-scheme: dark"] .regression-demo {
