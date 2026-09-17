@@ -1760,4 +1760,4 @@ Both **simulation studies** and **empirical evaluations** are common ways to eva
 
 ---
 
-[配套 slides](/slides/dsa3361-tutorial-4/dsa3361-tutorial-4-standalone.html)
+If you're a TA teaching this tutorial, here are some [companion slides](/slides/dsa3361-tutorial-4/dsa3361-tutorial-4-standalone.html) you can use alongside these notes.
