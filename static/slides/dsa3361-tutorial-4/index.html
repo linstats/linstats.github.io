@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>DSA3361 Tutorial 4 · Can Regression Recover the Truth?</title><link rel="icon" href="assets/nus-crest.svg"><link rel="stylesheet" href="vendor/katex/katex.min.css"><link rel="stylesheet" href="components.css"><link rel="stylesheet" href="deck.css?v=20260916-comparison-results"><script defer src="vendor/katex/katex.min.js"></script><script defer src="components.js?v=20260916-population"></script><script defer src="deck.js?v=20260916-comparison-results"></script></head><body><main id="deck" aria-label="DSA3361 Tutorial 4 presentation">
+<section class="slide cover" id="cover" aria-label=""><div class="brand"><img src="assets/nus-crest.svg" alt="National University of Singapore crest"><div class="wordmark"><strong>NUS</strong><span>National University<br>of Singapore</span></div><div class="department">Department of Statistics<br>and Data Science<br>Faculty of Science</div></div><div class="cover-title"><h1>Tutorial 4 <span class="access-code">（Access Code: <strong>r@ndom</strong>）</span></h1><p>Can Regression Recover the Truth?</p></div><div class="cover-meta">DSA3361 · Inferential Data Analytics<br>AY 2026/27 Semester 1<br><span>Zhu Xuelin</span></div>
+<aside class="speaker-notes">Welcome. The long-form Tutorial 4 page is the companion for revision. This session covers the individual task, with no mini-lecture section.</aside>
+</section>
+
+<section class="slide trust-slide" id="trust" aria-label="Can we trust a fitted line?">
+<h2 class="matched-agenda-title">Can we trust a fitted line?</h2><div class="trust-flow"><div class="dataframe-wrap"><div class="dataframe-label">data</div><table class="dataframe" aria-label="Observed data"><thead><tr><th></th><th>x</th><th>y</th></tr></thead><tbody><tr><th>1</th><td>x<sub>1</sub></td><td>y<sub>1</sub></td></tr><tr><th>2</th><td>x<sub>2</sub></td><td>y<sub>2</sub></td></tr><tr><th>⋮</th><td>⋮</td><td>⋮</td></tr><tr><th>100</th><td>x<sub>100</sub></td><td>y<sub>100</sub></td></tr></tbody></table></div><div class="fit-step"><div class="fit-step-label">We fit a line</div><div class="fit-arrow" aria-hidden="true"></div><code>sm.OLS(y,X).fit()</code></div><div class="fitted-line"><div class="math display" data-math="\hat y=\hat\beta_0+\hat\beta_1x"></div></div></div>
+<aside class="speaker-notes">Students already know how to compute a fitted line. The new question is whether the estimated coefficients are reliable. Introduce the falling-ball example: physics gives us a relationship independently of regression.</aside>
+</section>
+
+<section class="slide animation falling-slide combined-trust-slide" id="falling" aria-label="Can we trust a fitted line?">
+<h2 class="matched-agenda-title">Can we trust a fitted line?</h2><div class="trust-combined"><div class="trust-minipage trust-minipage-wide"><div class="regression-demo" style="max-width: 780px; margin: 2rem auto; padding: 1.25rem; border: 1px solid #d9e2ec; border-radius: 12px; background: #f8fafc;">
+  <div style="position: relative;">
+    <svg id="regression-demo-plot" viewBox="0 0 760 470" role="img" aria-labelledby="regression-demo-title regression-demo-description" style="display: block; width: 100%; height: auto; overflow: visible; background: transparent; border-radius: 8px;">
+      <title id="regression-demo-title">Falling-ball data, measurement error, and fitted regression line</title>
+      <desc id="regression-demo-description">A plot that first shows the distribution of observed falling times squared. The controls then reveal observed times, ideal heights, measurement error, and an animated fitted line.</desc>
+    </svg>
+    <div style="position: absolute; top: 9%; left: 12%; display: flex; flex-wrap: wrap; gap: 0.5rem; z-index: 2;">
+      <button id="collect-time-btn" type="button" style="border: 0; border-radius: 7px; padding: 0.5rem 0.8rem; color: white; background: #2563eb; font-weight: 600; cursor: pointer;">Collect time</button>
+      <button id="measure-height-btn" type="button" style="display: none; border: 0; border-radius: 7px; padding: 0.5rem 0.8rem; color: white; background: #0f766e; font-weight: 600; cursor: pointer;">Measure height</button>
+      <button id="inevitable-error-btn" type="button" style="display: none; border: 0; border-radius: 7px; padding: 0.5rem 0.8rem; color: white; background: #b45309; font-weight: 600; cursor: pointer;">Inevitable error</button>
+      <button id="fit-line-btn" type="button" style="display: none; border: 0; border-radius: 7px; padding: 0.5rem 0.8rem; color: white; background: #dc2626; font-weight: 600; cursor: pointer;">Fit line</button>
+      <button id="restart-btn" type="button" style="display: none; border: 0; border-radius: 7px; padding: 0.5rem 0.8rem; color: white; background: #7c3aed; font-weight: 600; cursor: pointer;">Restart</button>
+    </div>
+  </div>
+</div></div><div class="trust-minipage trust-minipage-narrow"><div class="variation-flow"><div class="variation-block"><div class="variation-label">Same relationship:</div><div class="math display" data-math="y_i=\frac{1}{2}g x_i+\epsilon_i"></div></div><div class="variation-plus">+</div><div class="variation-block"><div class="variation-label">Different measurements</div><div class="math display" data-math="\epsilon_i\text{ changes each time}"></div></div><div class="variation-down-arrow" aria-hidden="true"></div><p class="variation-result">Slightly different <span class="math" data-math="\hat\beta_1"></span> each time.</p></div></div></div>
+<aside class="speaker-notes">Assume release from rest and ignore air resistance. Here x is time squared, not time itself. The density is N(4,4), restricted to 0–8 and scaled vertically for visibility; its height is not the physical y-value. Click Collect time, Measure height, Inevitable error, Fit line, then Restart. The ideal relationship is y=4.9x. In this illustration, noise is added to y only. Repeated runs show sampling variation. Measurement error makes the points depart from the ideal line. The simulation holds the true coefficients fixed. In a real experiment, errors in timing and height can both matter; the simple additive error model here is an illustration rather than a full errors-in-variables model.</aside>
+</section>
+
+<section class="slide agenda-slide" id="agenda" aria-label="">
+<nav class="agenda" aria-label="Session outline"><a href="#trust"><span>0</span><span class="agenda-label">Can we trust a fitted line?</span></a><a href="#world"><span>1</span><span class="agenda-label">A world where we know the truth</span></a><a href="#fit"><span>2</span><span class="agenda-label">Fit the model and see what we get</span></a><a href="#quadratic"><span>3</span><span class="agenda-label">What if we add a quadratic term?</span></a></nav>
+<aside class="speaker-notes">Use this as a route through the session. The numbers mark sections of this presentation, not the question numbering in the worksheet.</aside>
+</section>
+
+<section class="slide " id="world" aria-label="A world where we know the truth">
+<h2>A world where we know the truth</h2><div class="world-layout"><p class="world-intro">We generate 100 sample points from <span class="math" data-math="Y_i=-1+0.5X_i+\epsilon_i,\qquad i=1,\ldots,100."></span></p><ul class="world-bullets"><li><span class="math" data-math="X_i\sim N(0,1)"></span></li><li><span class="math" data-math="\epsilon_i\sim N(0,0.25)"></span></li><li>True <span class="math" data-math="\beta_0=-1\quad\text{and}\quad\beta_1=0.5"></span>.</li></ul></div><div class="world-reveal-layout"><pre class="world-code-box"><code><span class="py-keyword">import</span> <span class="py-name">numpy</span> <span class="py-keyword">as</span> <span class="py-name">np</span>
+
+<span class="py-name">np</span>.<span class="py-function">random.seed</span>(<span class="py-number">123</span>)
+<span class="py-name">x</span> = <span class="py-name">np</span>.<span class="py-function">random.normal</span>(
+    <span class="py-parameter">loc</span>=<span class="py-number">0</span>, <span class="py-parameter">scale</span>=<span class="py-number">1</span>, <span class="py-parameter">size</span>=<span class="py-number">100</span>
+)
+<span class="py-name">eps</span> = <span class="py-name">np</span>.<span class="py-function">random.normal</span>(
+    <span class="py-parameter">loc</span>=<span class="py-number">0</span>, <span class="py-parameter">scale</span>=<span class="py-name">np</span>.<span class="py-function">sqrt</span>(<span class="py-number">0.25</span>), <span class="py-parameter">size</span>=<span class="py-number">100</span>
+)
+<span class="py-name">y</span> = <span class="py-number">-1</span> + <span class="py-number">0.5</span> * <span class="py-name">x</span> + <span class="py-name">eps</span></code></pre><div class="world-formula" aria-label="Vector form of the data-generating equation"><span class="world-formula-piece world-formula-column world-formula-y"><span class="world-formula-label py-name">y</span><span class="world-formula-arrow" aria-hidden="true">↓</span><span class="math" data-math="\begin{pmatrix}y_1\\y_2\\\vdots\\y_{100}\end{pmatrix}"></span></span><span class="world-formula-piece world-formula-y-equals"><span class="assignment-label">Assign to</span><span class="assignment-long-arrow" aria-label="assigned to"></span></span><span class="world-formula-piece world-formula-constant"><span class="math" data-math="-1+0.5"></span></span><span class="world-formula-piece world-formula-column world-formula-x"><span class="world-formula-label py-name">x</span><span class="world-formula-arrow" aria-hidden="true">↓</span><span class="math" data-math="\begin{pmatrix}x_1\\x_2\\\vdots\\x_{100}\end{pmatrix}"></span></span><span class="world-formula-piece world-formula-plus"><span class="math" data-math="+"></span></span><span class="world-formula-piece world-formula-column world-formula-eps"><span class="world-formula-label py-name">eps</span><span class="world-formula-arrow" aria-hidden="true">↓</span><span class="math" data-math="\begin{pmatrix}\epsilon_1\\\epsilon_2\\\vdots\\\epsilon_{100}\end{pmatrix}"></span></span></div></div>
+<aside class="speaker-notes">We specify the world before collecting its data. N(0,0.25) uses variance 0.25, so the error standard deviation is 0.5. In this simulation we know the generating rule and the true coefficients. With real data we observe x and y, but normally do not know the coefficients or each error.</aside>
+</section>
+
+<section class="slide code-explain" id="fit" aria-label="Fit the model and see what we get">
+<h2>Fit the model and see what we get</h2><div class="fit-top"><div class="world-layout"><p class="world-intro">We generate 100 sample points from <span class="math" data-math="Y_i=-1+0.5X_i+\epsilon_i,\qquad i=1,\ldots,100."></span></p><ul class="world-bullets"><li><span class="math" data-math="X_i\sim N(0,1)"></span></li><li><span class="math" data-math="\epsilon_i\sim N(0,0.25)"></span></li><li>True <span class="math" data-math="\beta_0=-1\quad\text{and}\quad\beta_1=0.5"></span>.</li></ul></div></div><div class="fit-bottom"><p class="fit-model-intro">We now fit the model <span class="math" data-math="\hat y=\hat\beta_0+\hat\beta_1x"></span>:</p><div class="explain-layout"><div class="code-surface"><pre><code>import statsmodels.api as sm</code></pre>
+<button class="code-trigger" data-panel="constant"><span>X = sm.add_constant(x)</span></button>
+<button class="code-trigger" data-panel="ols"><span>model = sm.OLS(y, X).fit()</span></button>
+<button class="code-trigger" data-panel="params"><span><strong>print</strong>(model.params.round(4))</span></button></div><div class="explanations"><div class="panel-placeholder">Click each line to see what happens</div>
+<div class="explanation linear-design-explanation" id="constant" hidden><div class="quadratic-design-row"><div class="quadratic-design-prefix"><span class="math" data-math="X=\left[\begin{matrix}|&|\\1&\texttt{x}\\|&|\end{matrix}\right]="></span></div><div class="quadratic-matrix linear-design-matrix"><span class="math" data-math="\begin{matrix}1\vphantom{x_{100}^2}\\[.25em]1\vphantom{x_{100}^2}\\[.25em]\vdots\vphantom{x_{100}^2}\\[.25em]1\vphantom{x_{100}^2}\end{matrix}"></span><span class="math" data-math="\begin{matrix}x_1\vphantom{x_{100}^2}\\[.25em]x_2\vphantom{x_{100}^2}\\[.25em]\vdots\vphantom{x_{100}^2}\\[.25em]x_{100}\vphantom{x_{100}^2}\end{matrix}"></span></div></div><div style="visibility:hidden"><div class="quadratic-fit-slot"><div class="quadratic-fit-row"><span class="math" data-math="\text{Fit }\hat y="></span><span class="math" data-math="\hat\beta_0"></span><span class="math" data-math="+\hat\beta_1x."></span></div></div></div><div style="visibility:hidden"><div class="quadratic-numeric-slot"><div class="quadratic-fit-row quadratic-numeric-row"><span class="math" data-math="="></span><span class="math" data-math="-1.0095+0.4917x."></span></div></div></div></div>
+<div class="explanation linear-design-explanation" id="ols" hidden><div class="quadratic-design-row"><div class="quadratic-design-prefix"><span class="math" data-math="X=\left[\begin{matrix}|&|\\1&\texttt{x}\\|&|\end{matrix}\right]="></span></div><div class="quadratic-matrix linear-design-matrix"><span class="math" data-math="\begin{matrix}1\vphantom{x_{100}^2}\\[.25em]1\vphantom{x_{100}^2}\\[.25em]\vdots\vphantom{x_{100}^2}\\[.25em]1\vphantom{x_{100}^2}\end{matrix}"></span><span class="math" data-math="\begin{matrix}x_1\vphantom{x_{100}^2}\\[.25em]x_2\vphantom{x_{100}^2}\\[.25em]\vdots\vphantom{x_{100}^2}\\[.25em]x_{100}\vphantom{x_{100}^2}\end{matrix}"></span></div></div><div style="visibility:visible"><div class="quadratic-fit-slot"><div class="quadratic-fit-row"><span class="math" data-math="\text{Fit }\hat y="></span><span class="math" data-math="\hat\beta_0"></span><span class="math" data-math="+\hat\beta_1x."></span></div></div></div><div style="visibility:hidden"><div class="quadratic-numeric-slot"><div class="quadratic-fit-row quadratic-numeric-row"><span class="math" data-math="="></span><span class="math" data-math="-1.0095+0.4917x."></span></div></div></div></div>
+<div class="explanation linear-design-explanation" id="params" hidden><div class="quadratic-design-row"><div class="quadratic-design-prefix"><span class="math" data-math="X=\left[\begin{matrix}|&|\\1&\texttt{x}\\|&|\end{matrix}\right]="></span></div><div class="quadratic-matrix linear-design-matrix"><span class="math" data-math="\begin{matrix}1\vphantom{x_{100}^2}\\[.25em]1\vphantom{x_{100}^2}\\[.25em]\vdots\vphantom{x_{100}^2}\\[.25em]1\vphantom{x_{100}^2}\end{matrix}"></span><span class="math" data-math="\begin{matrix}x_1\vphantom{x_{100}^2}\\[.25em]x_2\vphantom{x_{100}^2}\\[.25em]\vdots\vphantom{x_{100}^2}\\[.25em]x_{100}\vphantom{x_{100}^2}\end{matrix}"></span></div></div><div style="visibility:visible"><div class="quadratic-fit-slot"><div class="quadratic-fit-row"><span class="math" data-math="\text{Fit }\hat y="></span><span class="math" data-math="\hat\beta_0"></span><span class="math" data-math="+\hat\beta_1x."></span></div></div></div><div style="visibility:visible"><div class="quadratic-numeric-slot"><div class="quadratic-fit-row quadratic-numeric-row"><span class="math" data-math="="></span><span class="math" data-math="-1.0095+0.4917x."></span></div></div></div></div></div></div>
+</div><aside class="speaker-notes">Click each green-marked code group to show its explanation on the right. sm.OLS does not add an intercept automatically. sm.OLS(y,x).fit() is possible, but constrains the intercept to zero. The parameter order follows the columns of X.</aside>
+</section>
+
+<section class="slide animation plotting-slide" id="plotting" aria-label="How does the code become a plot?">
+<div id="plotting-workspace">
+<button type="button" id="plotting-copy-all">Copy code</button>
+
+<pre><code><span class="line"><span class="py-keyword">import</span> <span class="py-name">matplotlib</span>.<span class="py-name">pyplot</span> <span class="py-keyword">as</span> <span class="py-name">plt</span></span></code></pre>
+
+<div id="plotting-demo">
+<div id="plotting-code">
+
+<pre><code><span class="line"><span class="py-name">plt</span>.<span class="py-function">scatter</span>(<span class="py-name">x</span>, <span class="py-name">y</span>, <span class="py-parameter">color</span>=<span class="py-string">&quot;black&quot;</span>, <span class="py-parameter">alpha</span>=<span class="py-number">0.75</span>, <span class="py-parameter">label</span>=<span class="py-string">&quot;Observed data&quot;</span>)</span><span class="line"><span class="py-name">y_pred</span> = <span class="py-name">model</span>.<span class="py-attribute">fittedvalues</span> <span class="py-comment"># Compute predicted y</span></span><span class="line"><span class="py-name">order</span> = <span class="py-name">np</span>.<span class="py-function">argsort</span>(<span class="py-name">x</span>)</span><span class="line"><span class="py-name">x_sorted</span>, <span class="py-name">y_pred_sorted</span> = <span class="py-name">x</span>[<span class="py-name">order</span>], <span class="py-name">y_pred</span>[<span class="py-name">order</span>]</span><span class="line"><span class="py-name">plt</span>.<span class="py-function">plot</span>(<span class="py-name">x_sorted</span>, <span class="py-name">y_pred_sorted</span>, <span class="py-parameter">color</span>=<span class="py-string">&quot;red&quot;</span>, <span class="py-parameter">linestyle</span>=<span class="py-string">&quot;--&quot;</span>, <span class="py-parameter">label</span>=<span class="py-string">&quot;Fitted line&quot;</span>)</span></code></pre>
+
+<pre><code><span class="line"><span class="py-name">plt</span>.<span class="py-function">plot</span>(<span class="py-name">x_sorted</span>, -<span class="py-number">1</span> + <span class="py-number">0.5</span> * <span class="py-name">x_sorted</span>, <span class="py-parameter">color</span>=<span class="py-string">&quot;blue&quot;</span>, <span class="py-parameter">label</span>=<span class="py-string">&quot;Population line&quot;</span>)</span></code></pre>
+</div>
+
+<div id="plotting-steps">
+  <div class="plotting-scroll">
+    <svg viewBox="0 0 960 420" role="img" aria-label="Eight data rows become observed points, then sorted predictions form a fitted line"></svg>
+  </div>
+  <button type="button" class="plotting-next" hidden>Restart</button>
+</div>
+</div>
+
+
+
+
+<pre><code><span class="line">plt.xlabel(&quot;x&quot;)</span><span class="line">plt.ylabel(&quot;y&quot;)</span><span class="line">plt.legend()</span><span class="line">plt.show()</span></code></pre>
+
+</div>
+
+
+
+<aside class="speaker-notes">Only the first eight observations are shown in the animation. The fitted values come from the model fitted to all 100 observations. Click the red outlined code line to advance each stage. Scatter maps pairs to points. fittedvalues gives one prediction per original row. argsort returns the row indices that sort x. Apply the same order to x and predictions before connecting them. Python retains y even though the display replaces that column. The last stage draws the line from left to right. Copy code includes the plotting labels and plt.show().</aside>
+</section>
+
+<section class="slide code-explain" id="summary" aria-label="Fit the model and see what we get">
+<h2>Fit the model and see what we get</h2><div class="fit-top"><div class="world-layout"><p class="world-intro">We generate 100 sample points from <span class="math" data-math="Y_i=-1+0.5X_i+\epsilon_i,\qquad i=1,\ldots,100."></span></p><ul class="world-bullets"><li><span class="math" data-math="X_i\sim N(0,1)"></span></li><li><span class="math" data-math="\epsilon_i\sim N(0,0.25)"></span></li><li>True <span class="math" data-math="\beta_0=-1\quad\text{and}\quad\beta_1=0.5"></span>.</li></ul></div></div><div class="fit-bottom"><p class="fit-model-intro">We now fit the model <span class="math" data-math="\hat y=\hat\beta_0+\hat\beta_1x"></span>:</p><div class="explain-layout"><div class="code-surface"><pre><code>import statsmodels.api as sm</code></pre>
+<button class="code-trigger static-code-trigger"><span>X = sm.add_constant(x)</span></button>
+<button class="code-trigger static-code-trigger"><span>model = sm.OLS(y, X).fit()</span></button>
+<button class="code-trigger static-code-trigger"><span><strong>print</strong>(model.params.round(4))</span></button>
+<button class="code-trigger summary-trigger static-code-trigger">model.summary()</button></div><div class="explanations"><div class="panel-placeholder">Click each line to see what happens</div></div></div></div></div>
+<details class="result-reveal" hidden><summary><code>model.summary()</code></summary><div class="summary-output"><div class="summary-result-title">OLS Regression Results</div>
+
+<table class="summary-meta-table"><tbody>
+<tr><th>Dep. Variable</th><td>y</td><th>R-squared</th><td>0.567</td></tr>
+<tr><th>Model</th><td>OLS</td><th>Adj. R-squared</th><td>0.562</td></tr>
+<tr><th>Method</th><td>Least Squares</td><th>F-statistic</th><td>128.3</td></tr>
+<tr><th>Prob (F-statistic)</th><td>1.66e-19</td><th>Log-Likelihood</th><td>-69.520</td></tr>
+<tr><th>No. Observations</th><td>100</td><th>Df Residuals</th><td>98</td></tr>
+<tr><th>Df Model</th><td>1</td><th>Covariance Type</th><td>nonrobust</td></tr>
+<tr><th>AIC</th><td>143.0</td><th>BIC</th><td>148.3</td></tr>
+</tbody>
+</table>
+
+<table class="summary-coef-table"><thead><tr><th></th><th>coef</th><th>std err</th><th>t</th><th>P&gt;|t|</th><th>[0.025</th><th>0.975]</th></tr></thead><tbody>
+<tr><th>const</th><td>-1.0095</td><td>0.049</td><td>-20.603</td><td>&lt;0.001</td><td>-1.107</td><td>-0.912</td></tr>
+<tr><th>x1</th><td>0.4917</td><td>0.043</td><td>11.325</td><td>&lt;0.001</td><td>0.406</td><td>0.578</td></tr>
+</tbody>
+</table>
+</div></details>
+<aside class="speaker-notes">Click model.summary() to reveal the regression summary. R² is approximately 0.567 in this sample. Mention that the t and F statistics, likelihood, AIC and BIC provide more detailed statistical information; ST3131 covers this more deeply. The displayed result is a selected summary of the original output, without timestamp and residual diagnostics. P-values displayed as less than 0.001 are not literally zero.</aside>
+</section>
+
+<section class="slide " id="quadratic" aria-label="What if we add a quadratic term?">
+<h2>What if we add a quadratic term?</h2>
+<div class="fit-top"><div class="world-layout"><p class="world-intro">We generate 100 sample points from <span class="math" data-math="Y_i=-1+0.5X_i+\epsilon_i,\qquad i=1,\ldots,100."></span></p><ul class="world-bullets"><li><span class="math" data-math="X_i\sim N(0,1)"></span></li><li><span class="math" data-math="\epsilon_i\sim N(0,0.25)"></span></li><li>True <span class="math" data-math="\beta_0=-1\quad\text{and}\quad\beta_1=0.5"></span>.</li></ul></div></div>
+<div class="fit-bottom"><div class="model-intro-row"><p class="fit-model-intro linear-model-intro">We now fit the model <span class="math" data-math="\hat y=\hat\beta_0+\hat\beta_1x"></span>:</p><p class="fit-model-intro quadratic-model-intro">We now fit the model <span class="math" data-math="\hat y=\hat\beta_0+\hat\beta_1x+\hat\beta_2x^2"></span>:</p></div><div class="explain-layout"><div class="code-surface"><pre><code>import statsmodels.api as sm</code></pre>
+<button class="code-trigger static-code-trigger"><span>X = sm.add_constant(x)</span></button>
+<button class="code-trigger static-code-trigger"><span>model = sm.OLS(y, X).fit()</span></button>
+<button class="code-trigger static-code-trigger"><span><strong>print</strong>(model.params.round(4))</span></button>
+<button class="code-trigger summary-trigger static-code-trigger">model.summary()</button></div><div class="explanations"><div class="panel-placeholder">Click each line to see what happens</div></div></div></div>
+</section>
+
+
+
+<section class="slide animation noise-slide" id="noise" aria-label="What if we add a quadratic term?">
+<h2>What if we add a quadratic term?</h2>
+<div class="fit-top"><div class="world-layout"><p class="world-intro">We generate 100 sample points from <span class="math" data-math="Y_i=-1+0.5X_i+\epsilon_i,\qquad i=1,\ldots,100."></span></p><ul class="world-bullets"><li><span class="math" data-math="X_i\sim N(0,1)"></span></li><li><span class="math" data-math="\epsilon_i\sim N(0,0.25)"></span></li><li>True <span class="math" data-math="\beta_0=-1\quad\text{and}\quad\beta_1=0.5"></span>.</li></ul></div></div>
+<div class="fit-bottom"><p class="fit-model-intro"><span class="noise-model-source">We now fit the model <span class="math" data-math="\hat y=\hat\beta_0+\hat\beta_1x+\hat\beta_2x^2"></span>:</span> <span class="noise-plot-instruction">Use the same code as before to plot.</span></p><div id="quadratic-curvature-demo">
+<div class="noise-sidebar">
+  <div class="curve-controls">
+    <button id="curve-less-noise" type="button">− ε variance</button>
+    <button id="curve-more-noise" type="button">+ ε variance</button>
+    <button id="curve-reset" type="button">Reset</button>
+  </div>
+  <div class="curve-readout" aria-live="polite">
+    <span id="curve-variance"></span>
+    <span id="curve-b2-value"></span>
+  </div>
+  <p id="curve-equation">ŷ = −0.9925 + 0.4929x − 0.0134x²</p>
+</div>
+  <svg viewBox="0 0 760 460" role="img" aria-labelledby="curve-title curve-description">
+    <title id="curve-title">Refit the quadratic model under different error variances</title>
+    <desc id="curve-description">Observed data generated from a linear relationship and a red quadratic curve refitted after each new draw of the errors.</desc>
+    <defs><clipPath id="curve-clip"><rect x="64" y="55" width="666" height="345"/></clipPath></defs>
+    <g id="curve-axes"></g>
+    <g clip-path="url(#curve-clip)"><g id="curve-points"></g><path id="curve-reference" fill="none" stroke="#94a3b8" stroke-width="3"/><path id="curve-adjusted" fill="none" stroke="var(--curve-red)" stroke-width="2.5" stroke-dasharray="8 5"/></g>
+    <g class="curve-legend" font-size="23" fill="currentColor" transform="translate(0,40)">
+      <circle cx="74" cy="22" r="4" fill="currentColor"/><text x="86" y="27">Observed data</text>
+      <path d="M275 22h26" stroke="#94a3b8" stroke-width="3"/><text x="309" y="27">True relationship</text>
+      <path d="M515 22h26" stroke="var(--curve-red)" stroke-width="2.5" stroke-dasharray="8 5"/><text x="549" y="27">Quadratic fit</text>
+    </g>
+  </svg>
+</div>
+</div>
+
+
+<aside class="speaker-notes">The buttons change error variance and redraw errors while holding x fixed, then refit all coefficients. They do not directly change the curvature. Increasing noise increases the variability of the coefficient estimates; an individual new curve need not become more curved. Reset restores the original seed-123 dataset. The plotted y range is fixed for comparison, so at higher variance some observations may fall outside the frame.</aside>
+</section>
+
+<section class="slide agenda-slide" id="takeaway" aria-label="">
+<nav class="agenda" aria-label="Session outline"><a href="#trust"><span>0</span><span class="agenda-label">Can we trust a fitted line?</span></a><a href="#world"><span>1</span><span class="agenda-label">A world where we know the truth</span></a><a href="#fit"><span>2</span><span class="agenda-label">Fit the model and see what we get</span></a><a href="#quadratic"><span>3</span><span class="agenda-label">What if we add a quadratic term?</span></a></nav>
+<aside class="speaker-notes">Use this as a route through the session. The numbers mark sections of this presentation, not the question numbering in the worksheet.</aside>
+</section>
+</main>
+<nav id="deck-controls" aria-label="Slide navigation"><button id="previous" aria-label="Previous slide" title="Previous (←)">‹</button><button id="contents" title="Contents (C)">Contents</button><span id="slide-number" aria-live="polite"></span><button id="notes-toggle" title="Speaker notes (N)" aria-expanded="false">Notes</button><button id="fullscreen" title="Full screen (F)">Full screen</button><button id="next" aria-label="Next slide" title="Next (→)">›</button></nav><aside id="notes-panel" hidden aria-label="Speaker notes"><button id="close-notes" aria-label="Close speaker notes">×</button>
+<h2>Speaker notes</h2><div id="notes-text"></div></aside><noscript>This slide deck needs JavaScript for navigation, formulas and animations.</noscript></body></html>

@@ -1757,3 +1757,7 @@ Both **simulation studies** and **empirical evaluations** are common ways to eva
     border-color: #475569 !important;
   }
 </style>
+
+---
+
+[配套 slides](/slides/dsa3361-tutorial-4/dsa3361-tutorial-4-standalone.html)

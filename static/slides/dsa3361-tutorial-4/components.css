@@ -1,0 +1,39 @@
+
+#plotting-workspace { position: relative; margin: 1rem 0; border-radius: 8px; background: #f8f8f8; overflow: hidden; }
+html[style*="color-scheme: dark"] #plotting-workspace { background: #1f2937; }
+#plotting-workspace .highlight, #plotting-workspace pre { margin: 0 !important; border-radius: 0 !important; background: transparent !important; }
+#plotting-workspace .highlight button, #plotting-workspace pre button { display: none !important; }
+#plotting-workspace #plotting-copy-all { position: absolute; z-index: 2; top: .4rem; right: .6rem; padding: .3rem .65rem; border-radius: 5px; background: #e5e7eb; color: #243244; cursor: pointer; font-size: .85rem; }
+html[style*="color-scheme: dark"] #plotting-workspace #plotting-copy-all { background: #374151; color: #e2e8f0; }
+#plotting-demo { margin: 0; }
+#plotting-workspace #plotting-steps { margin: 0; padding: 0 1rem; }
+#plotting-code .highlight, #plotting-code pre { margin-top: 0; margin-bottom: 0; }
+#plotting-code pre { padding-top: .65rem; padding-bottom: .65rem; }
+#plotting-code .plotting-code-step { border: 2px solid transparent; border-radius: 5px; box-sizing: border-box; padding: 3px 6px; display: block; }
+#plotting-code .plotting-code-step.active { border-color: #dc2626; cursor: pointer; background: rgba(220,38,38,.04); }
+#plotting-code .plotting-code-step.active[aria-disabled="true"] { cursor: wait; }
+#plotting-code .plotting-code-step:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+#plotting-steps .plotting-next[hidden] { display: none; }
+#plotting-steps { --pd-text: #243244; --pd-grid: #e2e8f0; --pd-point: #111827; --pd-accent: #dc2626; --pd-panel: #f1f5f9; margin-top: .25rem; }
+html[style*="color-scheme: dark"] #plotting-steps { --pd-text: #e2e8f0; --pd-grid: #475569; --pd-point: #f8fafc; --pd-accent: #f87171; --pd-panel: #252c38; }
+#plotting-steps .plotting-caption, #plotting-steps .plotting-status { font-size: .85rem; margin: .7rem 0; }
+#plotting-steps .plotting-status:empty { display: none; }
+#plotting-steps .plotting-scroll { overflow-x: auto; }
+#plotting-steps svg { width: 100%; display: block; font-family: system-ui, sans-serif; }
+#plotting-steps svg text { fill: var(--pd-text); font-size: 14px; }
+#plotting-steps .plotting-table text { font-size: 20px; }
+#plotting-steps .plotting-next { padding: .6rem .9rem; border: 1px solid #94a3b8; border-radius: 7px; background: var(--pd-panel); color: var(--pd-text); cursor: pointer; max-width: 100%; }
+#plotting-steps .plotting-next code { color: inherit; white-space: normal; }
+#plotting-steps .plotting-next:disabled { cursor: wait; opacity: .55; }
+
+
+#quadratic-curvature-demo { --curve-red: #dc2626; color: #243244; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 1rem; margin: 1rem 0 1.5rem; }
+#quadratic-curvature-demo .curve-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .65rem; }
+#quadratic-curvature-demo button { padding: .35rem .65rem; border: 1px solid #94a3b8; border-radius: 6px; background: transparent; color: inherit; font-size: .85rem; cursor: pointer; }
+#quadratic-curvature-demo button:hover { border-color: var(--curve-red); }
+#quadratic-curvature-demo :focus-visible { outline: 2px solid var(--curve-red); outline-offset: 4px; }
+#quadratic-curvature-demo .curve-readout { display: flex; justify-content: center; flex-wrap: wrap; gap: .5rem 2rem; margin-top: .8rem; font-variant-numeric: tabular-nums; }
+#quadratic-curvature-demo #curve-equation { margin: .8rem 0 .25rem; font-size: 1.15rem; text-align: center; font-variant-numeric: tabular-nums; }
+#quadratic-curvature-demo svg { display: block; width: 100%; height: auto; }
+#quadratic-curvature-demo .curve-note { margin: .4rem 0 0; font-size: .85rem; line-height: 1.5; }
+html.dark #quadratic-curvature-demo, html[style*="color-scheme: dark"] #quadratic-curvature-demo { --curve-red: #f87171; color: #e2e8f0; background: #1f2937; border-color: #475569; }
