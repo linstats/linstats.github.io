@@ -1,8 +1,8 @@
 ---
 title: "Why n − 1 in Sample Variance?"
-summary: "The true mean stays put, but the sample mean follows our sample. What does this do to our estimate of variance?"
+summary: "When we first learn about sample variance, one question always seems to linger: why do we divide by n − 1 instead of n?"
 date: 2026-09-19
-draft: true
+draft: false
 type: docs
 math: true
 image:
@@ -10,7 +10,6 @@ image:
   caption: "The sample clusters around its own mean"
 tags:
   - Statistics
-  - Estimation
 ---
 
 Suppose our population consists of one million people who voted for Trump in the 2024 election. We want to know: roughly how old are they on average? And is their age distribution fairly concentrated, or is there a wide mix of younger and older voters?
