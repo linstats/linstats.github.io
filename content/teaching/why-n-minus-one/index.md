@@ -5,6 +5,9 @@ date: 2026-09-19
 draft: true
 type: docs
 math: true
+image:
+  filename: featured.png
+  caption: "The sample clusters around its own mean"
 tags:
   - Statistics
   - Estimation

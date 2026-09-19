@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Population and sample</title>
+  <desc id="desc">The population mean is 39. Five blue sample points cluster around their sample mean of 45.</desc>
+  <rect width="1200" height="675" fill="white"/>
+  <g font-family="Georgia, serif" font-size="32" fill="#505459">
+    <text x="205" y="322" text-anchor="end">Population</text>
+    <text x="205" y="487" text-anchor="end" fill="#306397">Sample</text>
+    <text x="724" y="190" text-anchor="middle">μ = 39</text>
+    <text x="898" y="190" text-anchor="middle" fill="#306397">X̄ = 45</text>
+  </g>
+  <path d="M724 220 V540" stroke="#757b82" stroke-width="2" stroke-dasharray="9 9"/>
+  <path d="M898 220 V540" stroke="#306397" stroke-width="2" stroke-dasharray="9 9"/>
+  <g fill="white" stroke="#757b82" stroke-width="2.5">
+    <circle cx="260" cy="310" r="7"/><circle cx="405" cy="310" r="7"/>
+    <circle cx="463" cy="310" r="7"/><circle cx="521" cy="310" r="7"/>
+    <circle cx="579" cy="310" r="7"/><circle cx="637" cy="310" r="7"/>
+    <circle cx="695" cy="310" r="7"/><circle cx="753" cy="310" r="7"/>
+    <circle cx="985" cy="310" r="7"/><circle cx="1072" cy="310" r="7"/>
+  </g>
+  <g fill="#306397">
+    <circle cx="782" cy="310" r="8"/><circle cx="840" cy="310" r="8"/>
+    <circle cx="898" cy="310" r="8"/><circle cx="956" cy="310" r="8"/>
+    <circle cx="1014" cy="310" r="8"/>
+    <circle cx="782" cy="475" r="8"/><circle cx="840" cy="475" r="8"/>
+    <circle cx="898" cy="475" r="8"/><circle cx="956" cy="475" r="8"/>
+    <circle cx="1014" cy="475" r="8"/>
+  </g>
+</svg>
