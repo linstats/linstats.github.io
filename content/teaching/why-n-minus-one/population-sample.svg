@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 350" role="img" aria-labelledby="title desc">
+<title id="title">Population and sample ages</title><desc id="desc">Fifteen population ages with mean 39. The five selected ages are 49, 47, 45, 43, and 41, with sample mean 45. Dashed lines show both means.</desc>
+<rect width="1080" height="350" fill="white"/>
+<g font-family="Georgia, serif" font-size="18" fill="#505459">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#505459"/></marker></defs>
+<path d="M140 90 H1036" stroke="#505459" marker-end="url(#arrow)"/>
+<text x="1030" y="77" text-anchor="end">Age</text>
+<text x="125" y="168" text-anchor="end">Population:</text>
+<text x="125" y="283" text-anchor="end" fill="#306397">Sample:</text>
+<path d="M644 70 V320" stroke="#505459" stroke-dasharray="6 5"/>
+<text x="644" y="25" text-anchor="middle" fill="#505459">Population</text>
+<text x="644" y="51" text-anchor="middle" fill="#505459">μ = 39</text>
+<path d="M812 70 V320" stroke="#306397" stroke-dasharray="6 5"/>
+<text x="812" y="25" text-anchor="middle" fill="#306397">Sample</text>
+<text x="812" y="51" text-anchor="middle" fill="#306397">X̄ = 45</text>
+<circle cx="196" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="196" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">6</tspan></text>
+<text x="196" y="191" text-anchor="middle" font-size="15">23</text>
+<circle cx="336" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="336" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">14</tspan></text>
+<text x="336" y="191" text-anchor="middle" font-size="15">28</text>
+<circle cx="392" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="392" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">13</tspan></text>
+<text x="392" y="191" text-anchor="middle" font-size="15">30</text>
+<circle cx="448" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="448" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">12</tspan></text>
+<text x="448" y="191" text-anchor="middle" font-size="15">32</text>
+<circle cx="504" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="504" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">11</tspan></text>
+<text x="504" y="191" text-anchor="middle" font-size="15">34</text>
+<circle cx="560" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="560" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">10</tspan></text>
+<text x="560" y="191" text-anchor="middle" font-size="15">36</text>
+<circle cx="616" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="616" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">9</tspan></text>
+<text x="616" y="191" text-anchor="middle" font-size="15">38</text>
+<circle cx="672" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="672" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">8</tspan></text>
+<text x="672" y="191" text-anchor="middle" font-size="15">40</text>
+<circle cx="700" cy="162" r="4" stroke="#306397" fill="#306397"/>
+<text x="700" y="142" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">5</tspan></text>
+<text x="700" y="191" text-anchor="middle" font-size="15">41</text>
+<circle cx="756" cy="162" r="4" stroke="#306397" fill="#306397"/>
+<text x="756" y="142" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<text x="756" y="191" text-anchor="middle" font-size="15">43</text>
+<circle cx="812" cy="162" r="4" stroke="#306397" fill="#306397"/>
+<text x="812" y="142" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="812" y="191" text-anchor="middle" font-size="15">45</text>
+<circle cx="868" cy="162" r="4" stroke="#306397" fill="#306397"/>
+<text x="868" y="142" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="868" y="191" text-anchor="middle" font-size="15">47</text>
+<circle cx="896" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="896" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">7</tspan></text>
+<text x="896" y="191" text-anchor="middle" font-size="15">48</text>
+<circle cx="924" cy="162" r="4" stroke="#306397" fill="#306397"/>
+<text x="924" y="142" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="924" y="191" text-anchor="middle" font-size="15">49</text>
+<circle cx="980" cy="162" r="4" stroke="#505459" fill="white"/>
+<text x="980" y="142" text-anchor="middle" fill="#505459" font-size="15">X<tspan baseline-shift="sub" font-size="11">15</tspan></text>
+<text x="980" y="191" text-anchor="middle" font-size="15">51</text>
+<circle cx="924" cy="277" r="4" stroke="#306397" fill="#306397"/>
+<text x="924" y="257" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+<text x="924" y="306" text-anchor="middle" font-size="15">49</text>
+<circle cx="868" cy="277" r="4" stroke="#306397" fill="#306397"/>
+<text x="868" y="257" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+<text x="868" y="306" text-anchor="middle" font-size="15">47</text>
+<circle cx="812" cy="277" r="4" stroke="#306397" fill="#306397"/>
+<text x="812" y="257" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+<text x="812" y="306" text-anchor="middle" font-size="15">45</text>
+<circle cx="756" cy="277" r="4" stroke="#306397" fill="#306397"/>
+<text x="756" y="257" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+<text x="756" y="306" text-anchor="middle" font-size="15">43</text>
+<circle cx="700" cy="277" r="4" stroke="#306397" fill="#306397"/>
+<text x="700" y="257" text-anchor="middle" fill="#306397" font-size="15">X<tspan baseline-shift="sub" font-size="11">5</tspan></text>
+<text x="700" y="306" text-anchor="middle" font-size="15">41</text>
+</g></svg>

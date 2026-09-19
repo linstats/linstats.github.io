@@ -1,0 +1,32 @@
+.vsim { padding: 22px; margin: 24px 0; border: 1px solid #d6dee7; border-radius: 12px; background: #fff; color: #253344; }
+.vsim-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 14px; }
+.vsim button, .vsim select { font: inherit; padding: 9px 13px; border-radius: 7px; border: 1px solid #bac8d6; }
+.vsim button { background: #306397; color: white; cursor: pointer; }
+.vsim button:disabled { opacity: .45; cursor: default; }
+.vsim button.vsim-secondary, .vsim select { color: #253344; background: #f5f7fa; }
+.vsim :focus-visible { outline: 3px solid #e9b44c; outline-offset: 3px; }
+#vsim-count { color: #617286; }
+#vsim-plot { width: 100%; height: auto; display: block; margin-top: 20px; }
+.vsim .vsim-key { font-size: 12px; margin: 0 0 18px; text-align: center; }
+.vsim-grey { color: #8592a0; } .vsim-blue { color: #306397; }
+.vsim-estimates { display: flex; gap: 14px; margin-bottom: 22px; }
+.vsim-estimates > div { flex: 1; padding: 12px; background: #f1f5fa; border-radius: 8px; font-size: 14px; }
+.vsim-estimates strong { display: block; font-size: 24px; font-variant-numeric: tabular-nums; margin-top: 4px; color: #306397; }
+.vsim-results { width: 100%; }
+.vsim-table-scroll { min-width: 0; overflow-x: auto; }
+.vsim .vsim-table { table-layout: fixed; margin: 0; width: 100%; min-width: 751px; font-size: 12px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.vsim-table caption { text-align: left; padding-bottom: 8px; color: #617286; }
+.vsim .vsim-table th, .vsim .vsim-table td { box-sizing: border-box; height: 48px; padding: 0 4px; text-align: center; vertical-align: middle; border: 1px solid #dce3ec; white-space: nowrap; }
+.vsim .vsim-table th { background: #f5f7fa; color: #253344; font-weight: 600; }
+.vsim .vsim-table td { color: #306397; }
+.vsim .vsim-table .vsim-average-cell { border: 0; background: transparent; padding: 0 0 0 12px; }
+.vsim .vsim-table tfoot td { border: 0; height: 36px; color: #253344; }
+.vsim-average-result:not([hidden]) { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.vsim-avg-arrow { position: relative; display: inline-block; width: 42px; font-size: 30px; line-height: 30px; font-weight: normal; }
+.vsim-avg-arrow > span { position: absolute; top: -5px; left: 0; width: 100%; font-size: 10px; line-height: 12px; }
+.vsim-average-result strong { font-size: 15px; font-weight: 600; }
+#vsim-average { white-space: nowrap; line-height: 1; padding: 9px 14px; }
+#vsim-average.vsim-ready { background: #a65b09; box-shadow: 0 0 0 4px #ffebba; }
+.vsim #vsim-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.vsim-flying { position: fixed; z-index: 9999; pointer-events: none; color: #306397; background: #edf4fc; border-radius: 6px; padding: 3px 6px; font: bold 20px Georgia, serif; }
+@media (max-width: 600px) { .vsim { padding: 12px; } }
