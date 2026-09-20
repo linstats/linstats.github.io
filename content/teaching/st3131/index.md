@@ -62,3 +62,16 @@ Multicollinearity can create difficulties in computation, whether in <code>R</co
 Linear regression (SLR/MLR) is used when the response variable $y$ is continuous. But what should we use when facing a classification problem, for example when $y$ takes only two values such as male/female?
 
 A natural extension is logistic regression. <a href="files/slides-logit-reg.pdf" target="_blank">These Tutorial 10 slides</a> give a quick introduction to the model, including how to fit it, perform hypothesis testing, and make predictions.
+
+### Optional Extension
+
+How can we fit a curve by looking at one neighbourhood at a time? This optional article connects kernel smoothing and a centred Taylor expansion to the weighted least squares ideas from regression.
+
+<a href="/teaching/st3131-local-regression/" style="display:block;max-width:34rem;border:1px solid #94a3b8;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;margin:1.5rem 0;">
+  <img src="/teaching/st3131-local-regression/featured.png" alt="Kernel and local linear regression curves fitted to the same observations." style="display:block;width:100%;height:auto;margin:0;" loading="lazy">
+  <div style="padding:1.25rem;">
+    <strong style="display:block;font-size:1.2rem;line-height:1.4;">Optional Extension · How Do We Fit a Curve?</strong>
+    <p style="margin:0.75rem 0;">From nearest neighbours to kernel and local linear regression: local weighting, Taylor expansion, and weighted least squares.</p>
+    <span style="font-size:0.9rem;">Theory and worked derivations · Optional Python examples</span>
+  </div>
+</a>
