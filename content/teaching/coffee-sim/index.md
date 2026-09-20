@@ -3,12 +3,17 @@ title: "How Many Cups of Coffee Can I Buy with $10?"
 summary: "A beginner-friendly introduction to probability simulation: estimating how many cups of coffee you can buy when prices vary randomly from $0 to $10."
 date: 2025-01-25
 type: docs
+categories:
+  - Teaching Explorations and Resources
+teaching_order: 2
 math: false
 tags:
   - Probability
 image:
   caption: 'Coffee'
 ---
+
+[← All teaching](/teaching/)
 
 Imagine this: I’m a coffee lover with only 10 dollars to spend. But here’s the twist—each cup of coffee costs a random price between 0 and 10 dollars. So, on average, how many cups can I actually buy?
 

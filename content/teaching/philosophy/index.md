@@ -3,12 +3,17 @@ title: "My Teaching Philosophy: Bringing Statistics to Life"
 summary: "How I make statistics more approachable through visualization, practical applications, and everyday conversations."
 date: 2024-10-10
 type: docs
+categories:
+  - Teaching Explorations and Resources
+teaching_order: 5
 math: false
 tags:
   - Teaching Philosophy
 image:
   caption: 'Con Panna with Notes'
 ---
+
+[← All teaching](/teaching/)
 
 
 One of my favorite professors, [Cai Jingheng](https://math.sysu.edu.cn/scrcss/teacher/127) (蔡敬衡), once said: *“True discoveries or creations are not made by statisticians themselves, but by other scientists. Yet, almost all of them rely on an indispensable tool: statistics.”* I like this word and believe that the power of statistics lies not only in its mathematical rigor but in its ability to help us make sense of the world. I find much joy in sharing statistical concepts with others—whether with friends, peers, roommates, or family—and I am committed to promoting the broad application of statistical methods across diverse fields.

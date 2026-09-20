@@ -4,14 +4,20 @@ summary: "When we first learn about sample variance, one question always seems t
 date: 2026-09-19
 draft: false
 type: docs
+categories:
+  - Teaching Explorations and Resources
+teaching_order: 3
 math: true
 image:
   filename: featured.png
   caption: "The sample clusters around its own mean"
 tags:
   - Statistics
-  - ST2132
 ---
+
+[← All teaching](/teaching/)
+
+*Adapted from a student's question in NUS ST2132.*
 
 Suppose our population consists of one million people who voted for Trump in the 2024 election. We want to know: roughly how old are they on average? And is their age distribution fairly concentrated, or is there a wide mix of younger and older voters?
 

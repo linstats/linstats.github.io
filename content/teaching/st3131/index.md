@@ -1,15 +1,24 @@
 ---
-title: "ST3131 Regression Tutorials"
-summary: "Unofficial supplementary notes and slides covering key regression topics from my ST3131 tutorials."
+title: "ST3131 · Regression Analysis"
+summary: "A systematic introduction to linear regression: estimation, inference, diagnostics, remedies, and a brief look at logistic regression."
 date: 2026-04-25
 type: docs
+categories:
+  - Teaching Courses
+teaching_order: 2
+hide_date: true
 math: true
-tags:
+courses:
   - ST3131
+tags:
+  - NUS
   - Linear Regression
 image:
   caption: "ST3131 Tutorial"
+  focal_point: Center
 ---
+
+[← All teaching](/teaching/)
 
 I served as a teaching assistant for ST3131 in AY25/26 Semester 2. While going through the course with students, I received many thoughtful questions, and I decided to organize some of them here as supplementary notes and slides.
 
@@ -29,6 +38,10 @@ If you are confused by how $\hat{\beta}$, $\mathrm{se}(\hat{\beta})$, the t-valu
 - Proving that $\mathrm{SampCor}(x,y)=\sqrt{R^2}$ in simple linear regression
 
 If you are interested, you can read <a href="files/notes-extension-in-SLR.pdf" target="_blank">this Tutorial 3 extension note</a>.
+
+### Tutorial 4: Extension
+
+Why do we call the diagonal entries of the hat matrix *leverage values*, and why do they matter when we analyse residuals? [This Tutorial 4 extension](/teaching/leverage-and-standardized-residuals/) builds the intuition step by step using simple linear regression.
 
 ### Tutorial 6: Model Assumptions
 

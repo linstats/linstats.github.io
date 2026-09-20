@@ -1,16 +1,22 @@
 ---
-title: "Can Regression Recover the Truth?"
+title: "Tutorial 4 · Can Regression Recover the Truth?"
 summary: "Create data with a known linear relationship, add random noise, and see how closely regression recovers the truth—and whether adding a quadratic term really helps."
 date: 2026-09-13
 type: docs
+teaching_order: 2
 math: true
 image:
   filename: featured.png
   caption: "Observed data, the true relationship, and a fitted quadratic curve"
-tags:
+courses:
   - DSA3361
+categories:
+  - DSA3361
+tags:
   - Linear Regression
 ---
+
+[← DSA3361 course contents](/teaching/dsa3361/)
 
 *Adapted from NUS DSA3361 Tutorial 4.*
 

@@ -3,6 +3,9 @@ title: "LaTeX & Keynote Templates for Statistics"
 summary: "Custom LaTeX and Keynote templates for creating clear, polished statistics notes, homework solutions, and presentations."
 date: 2025-01-25
 type: docs
+categories:
+  - Teaching Explorations and Resources
+teaching_order: 4
 math: false
 tags:
   - LaTeX
@@ -10,6 +13,8 @@ tags:
 image:
   caption: 'MC Decomposition'
 ---
+
+[← All teaching](/teaching/)
 
 Feel free to download these resources for study or reference. I hope they assist in your journey to understanding the language of data and science. These notes are for informational purposes only and reflect my personal understanding. While I strive for accuracy, I make no guarantees regarding the completeness or reliability of the content. 
 

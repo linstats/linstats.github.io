@@ -1,0 +1,14 @@
+{{/* Hugo Blox: Markdown */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $title := $block.content.title | emojify | $page.RenderString }}
+{{ $text := $block.content.text | emojify | $page.RenderString | safeHTML }}
+{{ $left_aligned := eq $block.id "course-header" }}
+
+<div class="flex flex-col {{ if $left_aligned }}items-start max-w-screen-lg px-8 xl:px-5{{ else }}items-center max-w-prose px-6{{ end }} mx-auto gap-3 justify-center">
+  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white{{ if $left_aligned }} text-left{{ end }}">
+    {{ $title }}
+  </div>
+
+  {{ with $text }}<div class="prose prose-slate {{ if $left_aligned }}prose-base text-left{{ else }}lg:prose-xl{{ end }} dark:prose-invert max-w-prose">{{ . }}</div>{{ end }}
+</div>

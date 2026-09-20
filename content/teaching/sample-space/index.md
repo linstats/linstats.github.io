@@ -3,6 +3,9 @@ title: "What Is the Sample Space in Statistics?"
 summary: "An intuitive introduction to sample spaces, random variables, and iid samples for students connecting probability with statistics."
 date: 2024-11-13
 type: docs
+categories:
+  - Teaching Explorations and Resources
+teaching_order: 1
 math: false
 tags:
   - Probability
@@ -10,6 +13,8 @@ tags:
 image:
   caption: 'Sample Space'
 ---
+
+[← All teaching](/teaching/)
 
 
 In statistics, we often work with independently and identically distributed (iid) samples. For instance, consider a set of observations:

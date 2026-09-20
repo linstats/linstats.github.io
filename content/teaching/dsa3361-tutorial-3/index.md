@@ -1,17 +1,23 @@
 ---
-title: "Who Eats More Chicken Wings?"
+title: "Tutorial 3 · Who Eats More Chicken Wings?"
 summary: "A step-by-step introduction to permutation tests and bootstrap confidence intervals, using hot wings data."
 date: 2026-09-11
 type: docs
+teaching_order: 1
 math: true
 image:
   filename: permutation-tails.png
   caption: "Permutation distribution and two-sided p-value"
-tags:
+courses:
   - DSA3361
+categories:
+  - DSA3361
+tags:
   - Permutation Test
   - Bootstrap
 ---
+
+[← DSA3361 course contents](/teaching/dsa3361/)
 
 *Adapted from NUS DSA3361 Tutorial 3.*
 

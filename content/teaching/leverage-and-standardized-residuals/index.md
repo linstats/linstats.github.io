@@ -1,16 +1,22 @@
 ---
-title: "What Is Leverage and Why It Matters?"
+title: "Tutorial 4 Extension · What Is Leverage and Why It Matters?"
 summary: "An intuitive introduction to leverage, hat values, and standardized residuals in linear regression."
 date: 2026-09-12
 type: docs
+teaching_order: 3
 math: true
 image:
   filename: featured-v2.png
   caption: "A high-leverage point can pull the fitted regression line"
+courses:
+  - ST3131
+categories:
+  - ST3131
 tags:
-  - DSA3361
   - Linear Regression
 ---
+
+[← ST3131 course contents](/teaching/st3131/)
 
 *Adapted from a student's question in NUS DSA3361.*
 
