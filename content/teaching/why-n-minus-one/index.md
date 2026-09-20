@@ -10,6 +10,7 @@ image:
   caption: "The sample clusters around its own mean"
 tags:
   - Statistics
+  - ST2132
 ---
 
 Suppose our population consists of one million people who voted for Trump in the 2024 election. We want to know: roughly how old are they on average? And is their age distribution fairly concentrated, or is there a wide mix of younger and older voters?
