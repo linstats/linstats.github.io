@@ -102,7 +102,7 @@ This means that if we repeat the “sample just five people” experiment many t
 
 This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Choose a sample size, draw ten samples, and see where the two estimates end up on average.
 
-<link rel="stylesheet" href="simulation.css?v=3">
+<link rel="stylesheet" href="simulation.css?v=4">
 <div id="variance-simulation" class="vsim">
   <div class="vsim-controls">
     <label for="vsim-size">Sample size</label>
@@ -127,8 +127,8 @@ This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Cho
         <colgroup><col style="width: 76px"><col span="10"><col style="width: 145px"></colgroup>
         <thead><tr><th scope="col">Estimate</th><th scope="col">1st</th><th scope="col">2nd</th><th scope="col">3rd</th><th scope="col">4th</th><th scope="col">5th</th><th scope="col">6th</th><th scope="col">7th</th><th scope="col">8th</th><th scope="col">9th</th><th scope="col">10th</th><th class="vsim-average-cell" scope="col"><button id="vsim-average" type="button" aria-label="Calculate average estimates" disabled>Average</button></th></tr></thead>
         <tbody>
-          <tr id="vsim-row-n"><th scope="row">÷ n</th><td class="vsim-average-cell"><span class="vsim-average-result" hidden><span class="vsim-avg-arrow" aria-hidden="true"><span>avg</span>⟶</span><strong id="vsim-average-n"></strong></span></td></tr>
-          <tr id="vsim-row-corrected"><th scope="row">÷ (n − 1)</th><td class="vsim-average-cell"><span class="vsim-average-result" hidden><span class="vsim-avg-arrow" aria-hidden="true"><span>avg</span>⟶</span><strong id="vsim-average-corrected"></strong></span></td></tr>
+          <tr id="vsim-row-n"><th scope="row">÷ n</th><td class="vsim-average-cell"><strong id="vsim-average-n" class="vsim-average-result" hidden></strong></td></tr>
+          <tr id="vsim-row-corrected"><th scope="row">÷ (n − 1)</th><td class="vsim-average-cell"><strong id="vsim-average-corrected" class="vsim-average-result" hidden></strong></td></tr>
         </tbody>
         <tfoot><tr><td colspan="11"></td><td class="vsim-average-cell"><span id="vsim-truth" hidden>True variance: 100</span></td></tr></tfoot>
       </table>
