@@ -102,7 +102,7 @@ This means that if we repeat the “sample just five people” experiment many t
 
 This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Choose a sample size, draw ten samples, and see where the two estimates end up on average.
 
-<link rel="stylesheet" href="simulation.css?v=2">
+<link rel="stylesheet" href="simulation.css?v=3">
 <div id="variance-simulation" class="vsim">
   <div class="vsim-controls">
     <label for="vsim-size">Sample size</label>
@@ -113,9 +113,9 @@ This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Cho
   </div>
   <svg id="vsim-plot" viewBox="0 0 860 300" role="img" aria-labelledby="vsim-plot-title vsim-plot-desc">
     <title id="vsim-plot-title">Population and current sample</title>
-    <desc id="vsim-plot-desc">The fixed population illustration combines all ten samples. Blue dots highlight the current sample in both rows. Dashed lines mark the true mean and sample mean.</desc>
+    <desc id="vsim-plot-desc">A normal density curve represents the population. The current sample appears on the population axis and then moves to the sample row. Dashed lines mark the population and sample means.</desc>
   </svg>
-  <p class="vsim-key"><span class="vsim-grey">○</span> Population illustration &nbsp; <span class="vsim-blue">●</span> Current sample</p>
+  <p class="vsim-key"><span class="vsim-grey">—</span> Population: N(0, 10²) &nbsp; <span class="vsim-blue">●</span> Current sample</p>
   <div class="vsim-estimates">
     <div>Divide by n <strong id="vsim-current-n">—</strong></div>
     <div>Divide by n − 1 <strong id="vsim-current-corrected">—</strong></div>
@@ -136,4 +136,4 @@ This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Cho
   </div>
   <p id="vsim-status" role="status" aria-live="polite">Click Sample to draw your first sample.</p>
 </div>
-<script src="simulation.js?v=2" defer></script>
+<script src="simulation.js?v=3" defer></script>
