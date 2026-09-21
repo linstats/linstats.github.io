@@ -203,9 +203,9 @@ $$
 
 For three optional follow-ups, see:
 
-- [Why use `2 × min(p_left, p_right)` instead of `max`?](/teaching/dsa3361-tutorial-3/two-sided-p-value/)
-- [Is a permutation distribution always bell-shaped?](/teaching/dsa3361-tutorial-3/permutation-distribution-shape/)
-- [How do we choose the quantity for a permutation test?](/teaching/dsa3361-tutorial-3/choosing-test-statistic/)
+- [Why use `2 × min(p_left, p_right)` instead of `max`?](/teaching/dsa3361/tutorial-3/two-sided-p-value/)
+- [Is a permutation distribution always bell-shaped?](/teaching/dsa3361/tutorial-3/permutation-distribution-shape/)
+- [How do we choose the quantity for a permutation test?](/teaching/dsa3361/tutorial-3/choosing-test-statistic/)
 
 > We now have strong evidence of a difference. But another sample might give us a number other than 5.2, so there’s some uncertainty in our estimate. Can we give a range instead?
 

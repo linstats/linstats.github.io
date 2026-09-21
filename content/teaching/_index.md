@@ -19,6 +19,7 @@ sections:
       filters:
         folders: [teaching]
         category: Teaching Courses
+        include_sections: true
     design:
       view: article-grid
       columns: 2

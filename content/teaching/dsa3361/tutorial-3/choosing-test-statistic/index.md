@@ -3,10 +3,11 @@ title: "Choosing a Quantity for a Permutation Test"
 summary: "An optional example of how the question we ask guides the statistic we use."
 type: docs
 math: true
-url: /teaching/dsa3361-tutorial-3/choosing-test-statistic/
-build:
-  list: never
+courses:
+  - DSA3361
 ---
+
+[← Tutorial 3 · Who Eats More Chicken Wings?](/teaching/dsa3361/tutorial-3/)
 
 ## What should we recalculate?
 

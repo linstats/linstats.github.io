@@ -3,10 +3,11 @@
 {{ $block := .wcBlock }}
 {{ $title := $block.content.title | emojify | $page.RenderString }}
 {{ $text := $block.content.text | emojify | $page.RenderString | safeHTML }}
-{{ $left_aligned := eq $block.id "course-header" }}
+{{ $course_header := eq $block.id "course-header" }}
+{{ $left_aligned := or $course_header (eq $block.id "course-content") }}
 
 <div class="flex flex-col {{ if $left_aligned }}items-start w-full max-w-6xl px-6 md:px-12{{ else }}items-center max-w-prose px-6{{ end }} mx-auto gap-3 justify-center">
-  {{ if $left_aligned }}
+  {{ if $course_header }}
   <div class="mb-1 text-sm text-gray-700 dark:text-gray-300">
     <a class="underline" href="{{ $page.Parent.RelPermalink }}">{{ $page.Parent.Title }}</a>
     <span class="px-2" aria-hidden="true">›</span>
@@ -14,9 +15,11 @@
   </div>
   {{ end }}
 
+  {{ with $title }}
   <div class="mb-6 font-bold text-gray-900 dark:text-white{{ if $left_aligned }} text-left text-4xl sm:text-5xl lg:text-6xl leading-tight{{ else }} text-3xl{{ end }}">
-    {{ $title }}
+    {{ . }}
   </div>
+  {{ end }}
 
   {{ with $text }}<div class="prose prose-slate {{ if $left_aligned }}lg:prose-xl text-left w-full max-w-none{{ else }}lg:prose-xl max-w-prose{{ end }} dark:prose-invert">{{ . }}</div>{{ end }}
 </div>

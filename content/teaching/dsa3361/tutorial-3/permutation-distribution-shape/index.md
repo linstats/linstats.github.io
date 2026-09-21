@@ -2,10 +2,11 @@
 title: "Are Permutation Histograms Always Bell-Shaped?"
 summary: "An optional note on how the chosen statistic affects a permutation distribution."
 type: docs
-url: /teaching/dsa3361-tutorial-3/permutation-distribution-shape/
-build:
-  list: never
+courses:
+  - DSA3361
 ---
+
+[← Tutorial 3 · Who Eats More Chicken Wings?](/teaching/dsa3361/tutorial-3/)
 
 ## A common misconception
 

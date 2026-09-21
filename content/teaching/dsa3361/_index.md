@@ -2,6 +2,7 @@
 title: "DSA3361 · Inferential Data Analytics"
 summary: "Python basics, permutation tests, bootstrap, linear regression, and multinomial logistic regression."
 type: landing
+show_sidebar: true
 tags:
   - NUS
   - Statistical Methods
@@ -21,24 +22,21 @@ sections:
     design:
       spacing:
         padding: ['4rem', '0', '2rem', '0']
-  - block: markdown
-    content:
-      text: '<hr>'
-    design:
-      spacing:
-        padding: ['0', '0', '0', '0']
   - block: collection
     id: tutorials
     content:
       count: 0
       sort_by: teaching_order
       sort_ascending: true
+      archive:
+        enable: false
       filters:
         folders: [teaching]
         category: DSA3361
+        include_sections: true
     design:
-      view: article-grid
+      view: course-article-grid
       columns: 2
       spacing:
-        padding: ['2rem', '0', '4rem', '0']
+        padding: ['1rem', '0', '4rem', '0']
 ---

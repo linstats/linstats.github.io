@@ -1,0 +1,12 @@
+{{- define "main" -}}
+  {{ if .Params.show_sidebar }}
+    <div class="mx-auto flex max-w-screen-xl">
+      {{ partial "components/sidebar.html" (dict "context" . "no_sidebar" false) }}
+      <main class="w-full min-w-0">
+        {{ partial "landing_page.html" . }}
+      </main>
+    </div>
+  {{ else }}
+    {{ partial "landing_page.html" . }}
+  {{ end }}
+{{- end -}}
