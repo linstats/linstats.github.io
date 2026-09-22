@@ -7,8 +7,11 @@
 {{ if $item.Params.external_link }}{{ $link = $item.Params.external_link }}{{ $target = "target=\"_blank\" rel=\"noopener\"" }}{{ end }}
 <div class="group cursor-pointer">
   {{ with $resource }}
-  {{ $image := cond $fill_image (.Fill (printf "960x540 %s" $anchor)) (.Fit (printf "960x540 %s" $anchor)) }}
-  {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+  {{ $image := . }}
+  {{ if ne $image.MediaType.SubType "svg" }}
+    {{ $image = cond $fill_image (.Fill (printf "960x540 %s" $anchor)) (.Fit (printf "960x540 %s" $anchor)) }}
+    {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+  {{ end }}
   <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
     <a class="relative block aspect-video" href="{{ $link }}" {{ $target | safeHTMLAttr }}>
       <img alt="{{ $item.Title | plainify }}" class="{{ if $fill_image }}object-fill{{ else }}object-contain{{ end }} transition-all" data-nimg="fill" decoding="async" fetchpriority="high" height="{{ $image.Height }}" loading="lazy" src="{{ $image.RelPermalink }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;" width="{{ $image.Width }}">

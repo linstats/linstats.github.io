@@ -7,8 +7,8 @@ teaching_order: 1
 hide_date: true
 math: true
 image:
-  filename: featured.png
-  caption: "The true regression line and a line estimated from a sample"
+  filename: intro-regression.svg
+  caption: "One fitted mean compared with a fitted mean that changes with x"
 courses:
   - ST3131
 categories:
