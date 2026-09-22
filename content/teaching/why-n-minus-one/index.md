@@ -100,11 +100,13 @@ This means that if we repeat the “sample just five people” experiment many t
 
 ## Let's try sampling!
 
-This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Choose a sample size, draw ten samples, and see where the two estimates end up on average.
+Choose a population distribution and a sample size, then draw ten samples. Every population below has variance **100**, so we can compare the two estimates on equal footing even when the shapes look very different.
 
 <link rel="stylesheet" href="simulation.css?v=4">
 <div id="variance-simulation" class="vsim">
   <div class="vsim-controls">
+    <label for="vsim-distribution">Distribution</label>
+    <select id="vsim-distribution"><option value="normal">Normal</option><option value="exponential">Exponential</option><option value="poisson">Poisson</option><option value="uniform">Uniform</option></select>
     <label for="vsim-size">Sample size</label>
     <select id="vsim-size"><option value="5">n = 5</option><option value="100">n = 100</option></select>
     <button id="vsim-sample" type="button">Sample</button>
@@ -113,9 +115,9 @@ This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Cho
   </div>
   <svg id="vsim-plot" viewBox="0 0 860 300" role="img" aria-labelledby="vsim-plot-title vsim-plot-desc">
     <title id="vsim-plot-title">Population and current sample</title>
-    <desc id="vsim-plot-desc">A normal density curve represents the population. The current sample appears on the population axis and then moves to the sample row. Dashed lines mark the population and sample means.</desc>
+    <desc id="vsim-plot-desc">The selected distribution represents the population. The current sample appears on the population axis and then moves to the sample row. Dashed lines mark the population and sample means.</desc>
   </svg>
-  <p class="vsim-key"><span class="vsim-grey">—</span> Population: N(0, 10²) &nbsp; <span class="vsim-blue">●</span> Current sample</p>
+  <p class="vsim-key"><span class="vsim-grey">—</span> Population: <span id="vsim-population-label">N(0, 10²)</span> &nbsp; <span class="vsim-blue">●</span> Current sample</p>
   <div class="vsim-estimates">
     <div>Divide by n <strong id="vsim-current-n">—</strong></div>
     <div>Divide by n − 1 <strong id="vsim-current-corrected">—</strong></div>
@@ -136,4 +138,4 @@ This time, let's sample from \(N(0,10^2)\), so the true variance is **100**. Cho
   </div>
   <p id="vsim-status" role="status" aria-live="polite">Click Sample to draw your first sample.</p>
 </div>
-<script src="simulation.js?v=3" defer></script>
+<script src="simulation.js?v=5" defer></script>
