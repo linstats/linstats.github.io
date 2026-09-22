@@ -4,7 +4,7 @@
 {{ $title := $block.content.title | emojify | $page.RenderString }}
 {{ $text := $block.content.text | emojify | $page.RenderString | safeHTML }}
 {{ $course_header := eq $block.id "course-header" }}
-{{ $left_aligned := or $course_header (eq $block.id "course-content") }}
+{{ $left_aligned := or $course_header (hasPrefix $block.id "course-content") }}
 
 <div class="flex flex-col {{ if $left_aligned }}items-start w-full max-w-6xl px-6 md:px-12{{ else }}items-center max-w-prose px-6{{ end }} mx-auto gap-3 justify-center">
   {{ if $course_header }}

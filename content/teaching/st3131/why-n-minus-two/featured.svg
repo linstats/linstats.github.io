@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">True and estimated regression lines</title>
+  <desc id="desc">A scatter of observations around a red true regression line and a dark estimated regression line.</desc>
+  <rect width="1000" height="620" fill="#fff"/>
+  <g stroke="#384455" stroke-width="4" fill="none">
+    <path d="M120 520H900M120 520V70"/>
+    <path d="M880 505l20 15-20 15M105 90l15-20 15 20"/>
+  </g>
+  <g fill="#384455" font-family="Georgia,serif" font-size="30">
+    <text x="905" y="560">x</text><text x="82" y="78">y</text>
+  </g>
+  <line x1="145" y1="465" x2="835" y2="175" stroke="#d45151" stroke-width="5"/>
+  <line x1="145" y1="500" x2="835" y2="125" stroke="#384455" stroke-width="5"/>
+  <g fill="#222">
+    <circle cx="210" cy="445" r="7"/><circle cx="275" cy="405" r="7"/><circle cx="335" cy="390" r="7"/>
+    <circle cx="400" cy="335" r="7"/><circle cx="460" cy="325" r="7"/><circle cx="520" cy="275" r="7"/>
+    <circle cx="585" cy="260" r="7"/><circle cx="645" cy="225" r="7"/><circle cx="710" cy="200" r="7"/>
+    <circle cx="780" cy="145" r="7"/>
+  </g>
+  <g font-family="Georgia,serif" font-size="30" font-style="italic">
+    <text x="780" y="150" fill="#384455">estimated line</text>
+    <text x="690" y="185" fill="#d45151">true line</text>
+  </g>
+  <g stroke="#66758a" stroke-width="2" stroke-dasharray="7 7">
+    <line x1="400" y1="335" x2="400" y2="397"/><line x1="585" y1="260" x2="585" y2="310"/>
+  </g>
+  <g fill="#66758a" font-family="Georgia,serif" font-size="24">
+    <text x="350" y="425">true errors</text><text x="590" y="335">residuals</text>
+  </g>
+</svg>

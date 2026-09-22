@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1491" height="1055" viewBox="0 0 1491 1055" role="img" aria-labelledby="title desc">
+  <title id="title">One fitted mean compared with a fitted mean that changes with x</title>
+  <desc id="desc">The left panel shows observations measured from one horizontal fitted mean. The right panel shows observations measured from a fitted line that changes with x.</desc>
+  <rect width="1491" height="1055" fill="#ffffff"/>
+
+  <style>
+    .heading { fill: #102a4c; font-family: Arial, Helvetica, sans-serif; font-size: 39px; font-weight: 700; }
+    .subtitle { fill: #243b5a; font-family: Arial, Helvetica, sans-serif; font-size: 27px; }
+    .axis-label, .formula, .residual-label { fill: #102a4c; font-family: Georgia, 'Times New Roman', serif; }
+    .axis-label { font-size: 37px; font-style: italic; }
+    .formula { font-size: 31px; }
+    .residual-label { font-size: 31px; }
+    .axis { stroke: #102a4c; stroke-width: 3; fill: none; }
+    .mean-line { stroke: #102a4c; stroke-width: 6; fill: none; }
+    .residual { stroke: #9aa7b6; stroke-width: 3; }
+    .point { fill: #111111; }
+  </style>
+
+  <!-- Left panel: one fitted mean -->
+  <text class="heading" x="300" y="75" text-anchor="middle">One fitted mean</text>
+  <text class="subtitle" x="300" y="123" text-anchor="middle">All observations share one fitted center.</text>
+  <line class="axis" x1="92" y1="820" x2="92" y2="202"/>
+  <line class="axis" x1="92" y1="820" x2="655" y2="820"/>
+  <text class="axis-label" x="58" y="226">y</text>
+  <line class="mean-line" x1="116" y1="582" x2="650" y2="582"/>
+  <text class="formula" x="672" y="593">mean = <tspan font-style="italic">ȳ</tspan></text>
+
+  <line class="residual" x1="182" y1="582" x2="182" y2="692"/>
+  <circle class="point" cx="182" cy="692" r="9"/>
+  <line class="residual" x1="218" y1="582" x2="218" y2="518"/>
+  <circle class="point" cx="218" cy="518" r="9"/>
+  <line class="residual" x1="276" y1="582" x2="276" y2="402"/>
+  <circle class="point" cx="276" cy="402" r="9"/>
+  <line class="residual" x1="306" y1="582" x2="306" y2="628"/>
+  <circle class="point" cx="306" cy="628" r="9"/>
+  <line class="residual" x1="354" y1="582" x2="354" y2="334"/>
+  <circle class="point" cx="354" cy="334" r="9"/>
+  <line class="residual" x1="420" y1="582" x2="420" y2="720"/>
+  <circle class="point" cx="420" cy="720" r="9"/>
+  <text class="residual-label" x="300" y="920" text-anchor="middle">residual = <tspan font-style="italic">y</tspan><tspan baseline-shift="sub" font-size="21">i</tspan> − <tspan font-style="italic">ȳ</tspan></text>
+
+  <!-- Right panel: fitted mean changes with x -->
+  <text class="heading" x="1118" y="75" text-anchor="middle">A fitted mean that changes with <tspan font-style="italic">x</tspan></text>
+  <text class="subtitle" x="1118" y="123" text-anchor="middle">Each observation has its own fitted center.</text>
+  <line class="axis" x1="808" y1="820" x2="808" y2="202"/>
+  <line class="axis" x1="808" y1="820" x2="1430" y2="820"/>
+  <text class="axis-label" x="774" y="226">y</text>
+  <text class="axis-label" x="1435" y="850">x</text>
+
+  <line class="residual" x1="875" y1="748" x2="875" y2="704"/>
+  <circle class="point" cx="875" cy="748" r="9"/>
+  <line class="residual" x1="941" y1="568" x2="941" y2="495"/>
+  <circle class="point" cx="941" cy="568" r="9"/>
+  <line class="residual" x1="988" y1="653" x2="988" y2="606"/>
+  <circle class="point" cx="988" cy="653" r="9"/>
+  <line class="residual" x1="1050" y1="590" x2="1050" y2="550"/>
+  <circle class="point" cx="1050" cy="590" r="9"/>
+  <line class="residual" x1="1116" y1="502" x2="1116" y2="470"/>
+  <circle class="point" cx="1116" cy="502" r="9"/>
+  <line class="residual" x1="1190" y1="432" x2="1190" y2="522"/>
+  <circle class="point" cx="1190" cy="432" r="9"/>
+  <line class="residual" x1="1258" y1="372" x2="1258" y2="445"/>
+  <circle class="point" cx="1258" cy="372" r="9"/>
+  <line class="residual" x1="1320" y1="315" x2="1320" y2="262"/>
+  <circle class="point" cx="1320" cy="315" r="9"/>
+
+  <line class="mean-line" x1="832" y1="700" x2="1350" y2="374"/>
+  <text class="formula" x="1280" y="355"><tspan font-style="italic">ŷ</tspan><tspan baseline-shift="sub" font-size="21">i</tspan> = <tspan font-style="italic">β̂</tspan><tspan baseline-shift="sub" font-size="21">0</tspan> + <tspan font-style="italic">β̂</tspan><tspan baseline-shift="sub" font-size="21">1</tspan><tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="21">i</tspan></text>
+  <text class="residual-label" x="1118" y="920" text-anchor="middle">residual = <tspan font-style="italic">y</tspan><tspan baseline-shift="sub" font-size="21">i</tspan> − <tspan font-style="italic">ŷ</tspan><tspan baseline-shift="sub" font-size="21">i</tspan></text>
+</svg>

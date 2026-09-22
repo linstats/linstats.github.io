@@ -36,6 +36,29 @@ sections:
         - <a href="files/table-SLR.pdf" target="_blank">This SLR table</a> for simple linear regression. It also includes a summary of ANOVA.
         - <a href="files/table-MLR.pdf" target="_blank">This MLR table</a> for multiple linear regression. It also includes a summary of ANOVA.
 
+    design:
+      spacing:
+        padding: ['4rem', '0', '1rem', '0']
+  - block: collection
+    id: regression-variance
+    content:
+      count: 1
+      sort_by: teaching_order
+      sort_ascending: true
+      archive:
+        enable: false
+      filters:
+        folders: [teaching]
+        category: ST3131
+    design:
+      view: course-article-grid
+      columns: 1
+      spacing:
+        padding: ['1rem', '0', '1rem', '0']
+  - block: markdown
+    id: course-content-intro
+    content:
+      text: |
         ### Tutorial 3: Some Extensions
 
         - The difference between the Confidence Interval (CI) and the Prediction Interval (PI)
@@ -49,11 +72,12 @@ sections:
         Why do we call the diagonal entries of the hat matrix *leverage values*, and why do they matter when we analyse residuals? The article below builds the intuition step by step using simple linear regression.
     design:
       spacing:
-        padding: ['4rem', '0', '1rem', '0']
+        padding: ['1rem', '0', '1rem', '0']
   - block: collection
     id: tutorial-4
     content:
       count: 1
+      offset: 1
       sort_by: teaching_order
       sort_ascending: true
       archive:
@@ -100,7 +124,7 @@ sections:
     id: optional-extension
     content:
       count: 1
-      offset: 1
+      offset: 2
       sort_by: teaching_order
       sort_ascending: true
       archive:
