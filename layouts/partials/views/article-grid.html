@@ -8,13 +8,17 @@
 <div class="group cursor-pointer">
   {{ with $resource }}
   {{ $image := . }}
+  {{ $image_height := "" }}
+  {{ $image_width := "" }}
   {{ if ne $image.MediaType.SubType "svg" }}
     {{ $image = cond $fill_image (.Fill (printf "960x540 %s" $anchor)) (.Fit (printf "960x540 %s" $anchor)) }}
     {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+    {{ $image_height = $image.Height }}
+    {{ $image_width = $image.Width }}
   {{ end }}
   <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
     <a class="relative block aspect-video" href="{{ $link }}" {{ $target | safeHTMLAttr }}>
-      <img alt="{{ $item.Title | plainify }}" class="{{ if $fill_image }}object-fill{{ else }}object-contain{{ end }} transition-all" data-nimg="fill" decoding="async" fetchpriority="high" height="{{ $image.Height }}" loading="lazy" src="{{ $image.RelPermalink }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;" width="{{ $image.Width }}">
+      <img alt="{{ $item.Title | plainify }}" class="{{ if $fill_image }}object-fill{{ else }}object-contain{{ end }} transition-all" data-nimg="fill" decoding="async" fetchpriority="high" {{ with $image_height }}height="{{ . }}"{{ end }} loading="lazy" src="{{ $image.RelPermalink }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;" {{ with $image_width }}width="{{ . }}"{{ end }}>
     </a>
   </div>
   {{ end }}
