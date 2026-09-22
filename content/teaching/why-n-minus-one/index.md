@@ -139,3 +139,5 @@ Choose a population distribution and a sample size, then draw ten samples. Every
   <p id="vsim-status" role="status" aria-live="polite">Click Sample to draw your first sample.</p>
 </div>
 <script src="simulation.js?v=5" defer></script>
+
+This idea does not stop here. In [ST3131](/teaching/st3131/), when we study regression, we will meet similar variance estimates where the sum of squares is divided by (n-2) or (n-p). If you come across them and would like to see how the same idea carries over, take a look at [Why (n-2) in Regression Variance?](/teaching/st3131/why-n-minus-two/).
