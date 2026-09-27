@@ -47,7 +47,7 @@ sections:
 
         From model and data to coefficient estimation, hypothesis testing, confidence intervals, and prediction.
 
-        **Download:** <a href="files/tutorial-5-slides.key" download>Slides (.key)</a> · <a href="files/tutorial-5-notebook.ipynb" download>Notebook (.ipynb)</a>
+        **Download:** <a href="files/tutorial-5-slides.key" download>Slides (.key)</a>
     design:
       spacing:
         padding: ['1rem', '0', '4rem', '0']
